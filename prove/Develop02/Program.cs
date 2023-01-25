@@ -13,6 +13,7 @@ class Program
         } while (menu._optionNumber != 0);
         
         Console.WriteLine("Thanks for writing in your journal.");
-
+        //to exceed expectations, I am also prompting the user to enter the amount of time 
+        //they spent on their phone that day.
     }
 }
