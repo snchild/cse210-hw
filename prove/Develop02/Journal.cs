@@ -28,7 +28,7 @@ public class Journal
         //call displayprompt, chooseprompt, and getresponse
         _currentEntry.DisplayPrompt();
         _currentEntry.GetResponse();
-        _currentEntry.GetDate();
+        _currentEntry.GetPhoneTime();
         
         //add to entries
         _entries.Add(_currentEntry);
@@ -42,6 +42,7 @@ public class Journal
             Console.WriteLine($"\nDate: {_entries[j]._date}");
             Console.WriteLine($"Prompt: {_entries[j]._prompt}");
             Console.WriteLine($"Response: {_entries[j]._response}");
+            Console.WriteLine($"Amount of time on phone today: {_entries[j]._phoneTime}");
         }
     }
 }

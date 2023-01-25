@@ -5,6 +5,7 @@ public class Entry
     public string _prompt = "";
     public string _response = "";
     public string _date = "";
+    public string _phoneTime = "";
     public Random rnd = new Random();
     public void DisplayPrompt()
     {
@@ -23,11 +24,15 @@ public class Entry
     {
         //get the response
         _response = Console.ReadLine();
+
+        //gets the date
+        DateTime currentTime = DateTime.Now;
+        _date = currentTime.ToShortDateString();
     }
-    public void GetDate()
+    public void GetPhoneTime()
     {
-        //get the date
-        Console.Write("Please enter the date in format yyyy.mm.dd: ");
-        _date = Console.ReadLine();
+        //get the amount of phone time
+        Console.Write("How long did you spend on your phone today? ");
+        _phoneTime = Console.ReadLine();
     }
 }
