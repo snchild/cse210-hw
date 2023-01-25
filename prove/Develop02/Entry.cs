@@ -1,7 +1,6 @@
 public class Entry
 {
     public List<string> _promptsList = new List<string>(){"What is your \"high\" of the day?","What is your \"low\" of the day?","What was something crazy that happened today?","What was the funniest part of your day?","What were your goals? Did you achieve them?"};
-    //public int _listLength = 5;
     public string _prompt = "";
     public string _response = "";
     public string _date = "";
