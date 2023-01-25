@@ -8,7 +8,7 @@ class Program
         Journal journal = new Journal(); //create journal
         do{
             menu.DisplayOptions();
-            menu.EnactOptions();
+            menu.EnactOptions(journal);
             
         } while (menu._optionNumber != 0);
         

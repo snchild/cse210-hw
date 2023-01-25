@@ -16,21 +16,29 @@ public class Menu
         string inputedOption = Console.ReadLine();
         _optionNumber = int.Parse(inputedOption);
     }
-    public void EnactOptions()
+    public void EnactOptions(Journal journal)
     {
-        Console.WriteLine("enacting options");
         //use case switch to run the corresponding functions
         switch(_optionNumber)
         {
             case 1:
                 //write a new entry
-            case 2:
+                journal.GetNewEntry();
+                break;
+            case 2: 
                 //display the journal
+                journal.DisplayJournal();
+                break;
             case 3:
                 //save the journal
+                journal.SaveJournal();
+                break;
             case 4:
                 //load the journal
+                journal.LoadJournal();
+                break;
             default:
+                //would be if they entered a 0, stop the loop
                 break;
             
         }

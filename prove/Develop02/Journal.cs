@@ -1,11 +1,11 @@
 public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
-    public string _currentEntry = "";
+    //public string _currentEntry = ""; //might not actually need
     public string _currentFileName = "";
     public void GetFileName()
     {
-        Console.WriteLine("What is the name of the file?");
+        Console.WriteLine("What is the full name of the file?");
         _currentFileName = Console.ReadLine();
     }
     public void LoadJournal()
@@ -22,14 +22,26 @@ public class Journal
     }
     public void GetNewEntry()
     {
-        Console.WriteLine("running get new entry");
+        //create new entry to add to list
+        Entry _currentEntry = new Entry();  //does this need to be public? i hope not
+
         //call displayprompt, chooseprompt, and getresponse
-        //put all together as currentEntry
+        _currentEntry.DisplayPrompt();
+        _currentEntry.GetResponse();
+        _currentEntry.GetDate();
+        
         //add to entries
+        _entries.Add(_currentEntry);
     }
     public void DisplayJournal()
-    {
-        Console.WriteLine("running display journal");
-        //display the journal
+    {        
+        //loop through the entries
+        for (int j = 0; j < _entries.Count ;j++)
+        {
+            //display each entry
+            Console.WriteLine($"\nDate: {_entries[j]._date}");
+            Console.WriteLine($"Prompt: {_entries[j]._prompt}");
+            Console.WriteLine($"Response: {_entries[j]._response}");
+        }
     }
 }
