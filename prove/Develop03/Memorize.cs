@@ -3,8 +3,10 @@ public class Memorize
     private bool _continue = true;
     private string _userInput;
     
-    public void MemorizeScripture(Scripture s)
+    public void MemorizeScripture(Scripture s, Choose ch) //wip
     {
+        ch.InitializeCurrentIndices( s.GetVerseLength() );
+
         Console.WriteLine("running MemorizeScripture");
         do{
             //display the scripture
@@ -14,12 +16,14 @@ public class Memorize
             Console.WriteLine("Press enter to continue or type 'quit' to finish");
             _userInput = Console.ReadLine();
             
-            if(_userInput == "quit" || _userInput == "quit")
+            if(_userInput != "quit")
             {
-                //pick random number
-                //choose random words
-                //erase the words
-
+                List<int> chosenIndices = new List<int>(); 
+                chosenIndices = ch.ChooseWords(); //choose random words to erase
+                
+                s.ReplaceWord(chosenIndices); //erase the words
+                
+                ClearConsole(); //clear console
             }
             else{
                 _continue = false;
@@ -27,8 +31,9 @@ public class Memorize
             
         }while(_continue == true);
     }
-    public void ClearConsole()
+    public void ClearConsole() //wip
     {
         Console.WriteLine("running ClearConsole");
+        //clear console
     }
 }
