@@ -11,8 +11,10 @@ class Program
         
         Scripture s = new Scripture();
 
+        Choose ch = new Choose();
+
         Memorize memorize = new Memorize();
-        memorize.MemorizeScripture(s);
+        memorize.MemorizeScripture(s, ch);
 
         Console.WriteLine(endMessage);
     }
