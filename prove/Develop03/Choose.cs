@@ -9,9 +9,7 @@ public class Choose
         _currentIndices.InsertRange(0, Enumerable.Range(0,length));
     }
     public List<int> ChooseWords()
-    {
-        Console.WriteLine("running ChooseWords");
-        
+    {       
         _chosenIndices.Clear(); //empty _chosenIndices
 
         _numberOfWords = _rand.Next(1,3); //pick a random number between 1 and 3

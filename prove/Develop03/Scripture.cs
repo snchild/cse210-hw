@@ -8,9 +8,7 @@ public class Scripture
         return listLength;
     }
     public void DisplayVerse()
-    {
-        Console.WriteLine("running DisplayVerse");
-        
+    {        
         int listLength = GetVerseLength(); //get verse's length
 
         Console.WriteLine(_reference);
@@ -22,18 +20,24 @@ public class Scripture
         Console.WriteLine(" "); //makes it so the next words are on a different line
 
     }
-    public int GetCharacterLength()
+    public int GetCharacterLength(int index) //wip
     {
         Console.WriteLine("running GetCharacterLength");
-        return 1;
+        int characterLength = _verse[index].Length;
+        return characterLength;
     }
-    public void ReplaceWord()
+    public void ReplaceWord(List<int> words) //wip
     {
         Console.WriteLine("running ReplaceWord");
-        //get the list of random words to replace
+        
         //do loop through all of that list
-        //get the character length
-        //at that index, replace the word with _*number of characters
+        for(int i = 0; i < words.Count; i++){
+            int length = GetCharacterLength(words[i]); //get the character length
+            //at that index, replace the word with _*numb of characters
+            string replacement = new String('_',length);
+            _verse[words[i]] = replacement;
+        }
+        
     }
 
 }

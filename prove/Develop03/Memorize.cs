@@ -3,7 +3,7 @@ public class Memorize
     private bool _continue = true;
     private string _userInput;
     
-    public void MemorizeScripture(Scripture s, Choose ch) //wip
+    public void MemorizeScripture(Scripture s, Choose ch) 
     {
         ch.InitializeCurrentIndices( s.GetVerseLength() );
 
@@ -23,7 +23,7 @@ public class Memorize
                 
                 s.ReplaceWord(chosenIndices); //erase the words
                 
-                ClearConsole(); //clear console
+                Console.Clear(); //clear console
             }
             else{
                 _continue = false;
@@ -31,9 +31,5 @@ public class Memorize
             
         }while(_continue == true);
     }
-    public void ClearConsole() //wip
-    {
-        Console.WriteLine("running ClearConsole");
-        //clear console
-    }
+    
 }
