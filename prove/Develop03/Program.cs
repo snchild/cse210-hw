@@ -17,5 +17,8 @@ class Program
 
         Console.WriteLine(endMessage);
 
+        //To exceed requirements, I had the randomly selected words only include those that had
+        // not been selected yet. 
+
     }
 }
