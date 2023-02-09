@@ -1,7 +1,8 @@
 public class Scripture
 {
-    private string _reference = "John 3:16";
-    public List<string> _verse = new List<string>() {"That","whosoever","believeth","in","him","should","not","perish","but","have","eternal","life."};
+    private string _reference = "Proverbs 3:5-6";
+    //public List<string> _verse = new List<string>() {"That","whosoever","believeth","in","him","should","not","perish","but","have","eternal","life."};
+    public List<string> _verse = new List<string>() {"Trust", "in", "the", "Lord","with","all","thine","heart;","and","lean","not","unto","thine","own","understanding.","\nIn","all","thy","ways","acknowledge","him,","and","he","shall","direct","thy","paths."};
     public int GetVerseLength()
     {
         int listLength = _verse.Count;
@@ -20,7 +21,7 @@ public class Scripture
         Console.WriteLine(" "); //makes it so the next words are on a different line
 
     }
-    public int GetCharacterLength(int index) //wip
+    private int GetCharacterLength(int index) //wip
     {
         Console.WriteLine("running GetCharacterLength");
         int characterLength = _verse[index].Length;

@@ -7,16 +7,15 @@ public class Memorize
     {
         ch.InitializeCurrentIndices( s.GetVerseLength() );
 
-        Console.WriteLine("running MemorizeScripture");
         do{
             //display the scripture
             s.DisplayVerse();
 
             //prompt user for input
-            Console.WriteLine("Press enter to continue or type 'quit' to finish");
+            Console.WriteLine("\nPress enter to continue or type 'quit' to finish");
             _userInput = Console.ReadLine();
             
-            if(_userInput != "quit")
+            if(_userInput != "quit" && ch._currentIndices.Count > 0)
             {
                 List<int> chosenIndices = new List<int>(); 
                 chosenIndices = ch.ChooseWords(); //choose random words to erase
