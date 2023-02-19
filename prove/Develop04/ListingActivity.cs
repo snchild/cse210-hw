@@ -1,12 +1,15 @@
 public class ListingActivity : Activity
 { 
     private List<string> _itemsList;
-    //don't forget a construction method
-    public void PromptItems()
+    public ListingActivity(string name) : base(name)
+    {
+        //nothing actually happens here
+    }
+    public void PromptItems()//wip
     {
         Console.WriteLine("running PromptItems from listing activity");
     }
-    public void DisplayLengths()
+    public void DisplayLengths()//wip
     {
         Console.WriteLine("running DisplayLengths from listing activity");
     }

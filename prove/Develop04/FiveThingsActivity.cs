@@ -2,9 +2,12 @@ public class FiveThingsActivity : Activity
 { 
     private List<string> _responses;
 
-    //don't forget a construction method
+    public FiveThingsActivity(string name) : base(name)
+    {
+        //nothing actually happens here
+    } 
 
-    public void PromptResponses()
+    public void PromptResponses()//wip
     {
         Console.WriteLine("running PromptResponses from five things activity");
     }
