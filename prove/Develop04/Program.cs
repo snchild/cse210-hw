@@ -11,6 +11,7 @@ class Program
         Console.WriteLine("4. Start reflection activity");
         Console.WriteLine("5. Quit");
     }
+    
     static void Main(string[] args)
     {
         //initialize all 4 activities
@@ -23,6 +24,7 @@ class Program
         bool willContinue = true;
 
         do{
+            Console.Clear();
             DisplayMenu(); //display menu
 
             //prompt for user input

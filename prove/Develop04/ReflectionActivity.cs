@@ -6,6 +6,7 @@ public class ReflectionActivity : Activity
     public ReflectionActivity(string name, int seconds) : base(name)
     {
         _questions = new List<string>{"question1","question2","question3"};
+        _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
         _secondsPassing = seconds;
     }
     public void DisplayQuestion()//wip

@@ -4,7 +4,7 @@ public class FiveThingsActivity : Activity
 
     public FiveThingsActivity(string name) : base(name)
     {
-        //nothing actually happens here
+        _description = "This activity will help ground you by focusing on things that correspond to your five senses.";
     } 
 
     public void PromptResponses()//wip

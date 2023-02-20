@@ -1,32 +1,36 @@
 public class Activity{ //parent class for the activities
     
     private string _name;
-    private string _startingMessage; //might not actually exist
     private string _finishingMessage;//might not actually exist
     private int _duration;
-    private bool _continue; //might actually be in Program
-    private string _description;
+    protected string _description;
     private List<string> _prompts;
     private string _currentPrompt;
     public Activity(string name) //wip
     {
         _name = name;
     }
-    public void DisplayBeginning() //wip
+    public void DisplayBeginning()
     {
-        Console.WriteLine("running DisplayBeginning from parent activity");
+        Console.Clear();
+        Console.WriteLine($"Welcome to the {_name} Activity.\n\n{_description}");
     }
-    public void DisplayEnding() //wip
+    public void DisplayEnding()
     {
-        Console.WriteLine("running DisplayEnding from parent activity");
+        Console.WriteLine("\nWell Done!");
+        Console.WriteLine($"\nYou have completed another {_duration} seconds of the {_name} Activity.\n");
+        DisplaySpinner();
     }
-    public void PromptDuration() //wip
+    public void PromptDuration()
     {
-        Console.WriteLine("running PromptDuration from parent activity");
-    }
-    public void Pause(int totalSeconds) //might not actually use; wip
-    {
-        Console.WriteLine("running Pause from parent activity");
+        Console.Write("\nHow long, in seconds, would you like for your session? ");
+        string userInput = Console.ReadLine();
+        _duration = int.Parse(userInput); 
+
+        Console.Clear();
+        Console.Write("Get ready...");
+        DisplaySpinner();
+
     }
     public void DisplayPrompt()//wip
     {
@@ -37,5 +41,36 @@ public class Activity{ //parent class for the activities
         Console.WriteLine("running GetRandom from parent activity");
         return 0;
     }
-
+    public void DisplaySpinner()
+    {
+        Thread.Sleep(500);
+        Console.Write("|");
+        Thread.Sleep(500);
+        Console.Write("\b \b"); // Erase the character
+        Console.Write("\\"); // Replace it with the \ character
+        Thread.Sleep(500);
+        Console.Write("\b \b"); // Erase the character
+        Console.Write("-"); // Replace it with the - character
+        Thread.Sleep(500);
+        Console.Write("\b \b"); // Erase the character
+        Console.Write("/"); // Replace it with the / character
+        Thread.Sleep(500);
+        Console.Write("\b \b"); // Erase the character
+        Console.Write("|"); // Replace it with the | character
+        Thread.Sleep(500);
+        Console.Write("\b \b"); // Erase the character
+        Console.Write("\\"); // Replace it with the \ character
+        Thread.Sleep(500);
+        Console.Write("\b \b"); // Erase the character
+        Console.Write("-"); // Replace it with the - character
+        Thread.Sleep(500);
+        Console.Write("\b \b"); // Erase the character
+        Console.Write("/"); // Replace it with the | character
+        Thread.Sleep(500);
+        Console.Write("\b \b"); // Erase the character
+        Console.Write("\\"); // Replace it with the \ character
+        Thread.Sleep(500);
+        Console.Write("\b \b"); // Erase the character
+        
+    }
 }
