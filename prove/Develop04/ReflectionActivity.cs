@@ -12,5 +12,21 @@ public class ReflectionActivity : Activity
     public void DisplayQuestion()//wip
     {
         Console.WriteLine("running DisplayQuestion from reflection activity");
+        
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(_duration);
+        DateTime currentTime;
+
+        Console.WriteLine(" "); //makes spacing work nicely
+        do{
+            _currentQuestion = _questions[GetRandom(_questions)];
+            Console.WriteLine(_currentQuestion);
+            
+            CountDown(_secondsPassing);
+            Console.WriteLine(" ");
+            
+            currentTime = DateTime.Now;//update currentTime
+
+        }while (currentTime < futureTime); //until the time has passed
     }
 }

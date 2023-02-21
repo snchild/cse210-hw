@@ -8,7 +8,7 @@ public class BreathingActivity : Activity
         _description = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
         _secondsPassing = seconds;
     }
-    public void DisplayBreathing()//wip
+    public void DisplayBreathing()
     {
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(_duration);
@@ -18,14 +18,13 @@ public class BreathingActivity : Activity
         do{
             Console.Write(_breathingMessage[0]);
             CountDown(_secondsPassing);
-
             Console.WriteLine(" ");
+            
             Console.Write(_breathingMessage[1]);
             CountDown(_secondsPassing);
-
             Console.WriteLine(" \n");
-            //update currentTime
-            currentTime = DateTime.Now;
+            
+            currentTime = DateTime.Now;//update currentTime
 
         }while (currentTime < futureTime); //until the time has passed
 

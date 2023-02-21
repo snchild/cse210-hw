@@ -70,7 +70,6 @@ class Program
                     willContinue = false;
                     break;
             }
-            //willContinue = false; //to prevent continuous loop
         } while(willContinue);
     }
     
