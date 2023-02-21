@@ -2,7 +2,7 @@ public class Activity{ //parent class for the activities
     
     private string _name;
     private string _finishingMessage;//might not actually exist
-    private int _duration;
+    protected int _duration;
     protected string _description;
     private List<string> _prompts;
     private string _currentPrompt;
@@ -28,7 +28,7 @@ public class Activity{ //parent class for the activities
         _duration = int.Parse(userInput); 
 
         Console.Clear();
-        Console.Write("Get ready...");
+        Console.WriteLine("Get ready...");
         DisplaySpinner();
 
     }
@@ -72,5 +72,17 @@ public class Activity{ //parent class for the activities
         Thread.Sleep(500);
         Console.Write("\b \b"); // Erase the character
         
+    }
+
+    public void CountDown(int highestNumber)
+    {
+        Thread.Sleep(100);
+        for(int j = highestNumber; j > 0; j--)
+        {
+            Console.Write(j);
+            Thread.Sleep(1000);
+            Console.Write("\b \b"); // Erase the character
+            
+        }
     }
 }
