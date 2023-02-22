@@ -17,8 +17,9 @@ public class Activity{ //parent class for the activities
     }
     public void DisplayEnding()
     {
-        Console.WriteLine("\nWell Done!");
-        Console.WriteLine($"\nYou have completed another {_duration} seconds of the {_name} Activity.\n");
+        Console.WriteLine("\nWell Done!\n");
+        DisplaySpinner();
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_name} Activity.\n");
         DisplaySpinner();
     }
     public void PromptDuration()
