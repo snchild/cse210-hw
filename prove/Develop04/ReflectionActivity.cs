@@ -10,29 +10,30 @@ public class ReflectionActivity : Activity
         _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
         _secondsPassing = seconds;
     }
-    public void DisplayPrompt()//wip
+    public void DisplayPrompt()
     {
-        Console.WriteLine("running DisplayPrompt from listing activity");
         Console.WriteLine("\nConsider the following prompt: ");
         _currentPrompt = _prompts[GetRandom(_prompts.Count)];
         Console.WriteLine($"\n --- {_currentPrompt} --- \n");
         Console.WriteLine("When you have something in mind, press enter to continue.");
-        Console.ReadLine(); //makes the program wait until they press enter
-        
+        Console.ReadLine(); //makes the program wait until they press enter 
     }
-    public void DisplayQuestion()//wip
+    public void DisplayQuestion()
     {        
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(_duration);
         DateTime currentTime;
 
-        Console.WriteLine(" "); //makes spacing work nicely
+        Console.WriteLine("\nNow ponder each of the following questions as they related to this experience. \n"); //makes spacing work nicely
+        Console.Write("You may begin in: ");
+        CountDown(3);
+        Console.WriteLine(" \n");
         do{
             _currentQuestion = _questions[GetRandom(_questions.Count)];
-            Console.WriteLine(_currentQuestion);
+            Console.Write($"{_currentQuestion}  ");
             
             CountDown(_secondsPassing);
-            Console.WriteLine(" ");
+            Console.WriteLine(" \n");
             
             currentTime = DateTime.Now;//update currentTime
 

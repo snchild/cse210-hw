@@ -15,10 +15,10 @@ class Program
     static void Main(string[] args)
     {
         //initialize all 4 activities
-        BreathingActivity breathe = new BreathingActivity("Breathing",3);
+        BreathingActivity breathe = new BreathingActivity("Breathing", 3);
         FiveThingsActivity fiveThings = new FiveThingsActivity("Five Things");
         ListingActivity listing = new ListingActivity("Listing");
-        ReflectionActivity reflection = new ReflectionActivity("Reflection", 5);
+        ReflectionActivity reflection = new ReflectionActivity("Reflection", 6);
 
         //initialize variables
         bool willContinue = true;

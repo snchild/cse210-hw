@@ -40,7 +40,7 @@ public class Activity{ //parent class for the activities
     //    Console.WriteLine($" --- {_currentPrompt} --- ");
     //    
     //}
-    public int GetRandom(int length)//wip
+    public int GetRandom(int length)
     {
         int chosenIndex = _rand.Next(0,length);
         return chosenIndex; 
@@ -80,7 +80,6 @@ public class Activity{ //parent class for the activities
 
     public void CountDown(int highestNumber)
     {
-        Thread.Sleep(100);
         for(int j = highestNumber; j > 0; j--)
         {
             Console.Write(j);
