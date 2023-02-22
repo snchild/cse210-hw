@@ -18,7 +18,7 @@ class Program
         BreathingActivity breathe = new BreathingActivity("Breathing",3);
         FiveThingsActivity fiveThings = new FiveThingsActivity("Five Things");
         ListingActivity listing = new ListingActivity("Listing");
-        ReflectionActivity reflection = new ReflectionActivity("Reflection", 4);
+        ReflectionActivity reflection = new ReflectionActivity("Reflection", 5);
 
         //initialize variables
         bool willContinue = true;

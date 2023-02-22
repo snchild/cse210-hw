@@ -1,11 +1,10 @@
 public class Activity{ //parent class for the activities
     
     private string _name;
-    private string _finishingMessage;//might not actually exist
     protected int _duration;
     protected string _description;
-    private List<string> _prompts;
-    private string _currentPrompt;
+    protected List<string> _prompts;
+    protected string _currentPrompt;
     private Random _rand = new Random();
     public Activity(string name) //wip
     {
@@ -33,18 +32,18 @@ public class Activity{ //parent class for the activities
         DisplaySpinner();
 
     }
-    public void DisplayPrompt()//wip
+    //public void DisplayPrompt()//wip
+    //{
+    //    Console.WriteLine("running DisplayPrompt from parent activity");
+    //    Console.WriteLine("Consider the following prompt: ");
+    //    _currentPrompt = _prompts[GetRandom(_prompts)];
+    //    Console.WriteLine($" --- {_currentPrompt} --- ");
+    //    
+    //}
+    public int GetRandom(int length)//wip
     {
-        Console.WriteLine("running DisplayPrompt from parent activity");
-        Console.WriteLine("Consider the following prompt: ");
-        _currentPrompt = _prompts[GetRandom(_prompts)];
-        Console.WriteLine($" --- {_currentPrompt} --- ");
-        
-    }
-    public int GetRandom(List<string> list)//wip; might not actually exist......
-    {
-        int chosenIndex = _rand.Next(0,list.Count);
-        return chosenIndex;
+        int chosenIndex = _rand.Next(0,length);
+        return chosenIndex; 
     }
     public void DisplaySpinner()
     {
