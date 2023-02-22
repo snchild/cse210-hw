@@ -5,32 +5,38 @@ public class FiveThingsActivity : Activity
     public FiveThingsActivity(string name) : base(name)
     {
         _description = "This activity will help ground you by focusing on things that correspond to your five senses.";
-        _prompts = new List<string>{"prompt1","prompt2","prompt3","prompt4", "prompt5"}; 
+        _prompts = new List<string>{"List 5 things you can see: ","List 4 things you can feel: ","List 3 things you can hear: ","List 2 things you can smell: ", "List 1 thing you can taste: "}; 
     } 
 
-    private void RecieveInputs(int length) //wip
+    private void RecieveInputs(int length) 
     {
         //will have a for loop to recieve the number of inputs that correspond to the prompt
         for(int i = 0; i < length; i++){
 
-            Console.WriteLine("> ");
+            Console.Write("> ");
             string oneResponse = Console.ReadLine();
             _responses.Add(oneResponse);
         }
     }
-    public void PromptResponses()//wip
-    {
-        Console.WriteLine("running PromptResponses from five things activity");
-    
+    public void PromptResponses()
+    {    
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(_duration);
-        DateTime currentTime;
+        DateTime currentTime = startTime;
+
+        Console.WriteLine(" "); //makes spacing better
 
         do{
             //have a for loop to loop through the prompts in order
-            //for each prompt, have the corresponding number of inputs that it accepts
-            //also have some logic to stop when the time is up
+            for (int j = 0; (j < 5 && currentTime < futureTime); j++)
+            {
+                //show the current prompt
+                Console.WriteLine(_prompts[j]);
+                RecieveInputs(5 - j); //for each prompt, have the corresponding number of inputs that it accepts
 
+                currentTime = DateTime.Now;//update currentTime
+            }
+            
             currentTime = DateTime.Now;//update currentTime
 
         } while (currentTime < futureTime); //time hasn't run out yet

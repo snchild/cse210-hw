@@ -50,7 +50,7 @@ public class Activity{ //parent class for the activities
     {
         Thread.Sleep(500);
         Console.Write("|");
-        Thread.Sleep(500);
+        
         Console.Write("\b \b"); // Erase the character
         Console.Write("\\"); // Replace it with the \ character
         Thread.Sleep(500);
