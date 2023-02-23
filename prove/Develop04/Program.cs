@@ -2,6 +2,10 @@ using System;
 
 class Program
 {
+    /* To go above and beyond, I added a five things activity that has the user list 5 things they can see,
+    4 things they can feel, 3 things they can hear, 2 things they can smell, and 1 thing they can taste. 
+    They continue doing this, in that order, until the time runs out.
+    */
     static void DisplayMenu() 
     {
         Console.WriteLine("Menu Options:");
