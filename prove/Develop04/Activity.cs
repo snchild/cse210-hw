@@ -6,7 +6,7 @@ public class Activity{ //parent class for the activities
     protected List<string> _prompts;
     protected string _currentPrompt;
     private Random _rand = new Random();
-    public Activity(string name) //wip
+    public Activity(string name) 
     {
         _name = name;
     }
@@ -33,14 +33,7 @@ public class Activity{ //parent class for the activities
         DisplaySpinner();
 
     }
-    //public void DisplayPrompt()//wip
-    //{
-    //    Console.WriteLine("running DisplayPrompt from parent activity");
-    //    Console.WriteLine("Consider the following prompt: ");
-    //    _currentPrompt = _prompts[GetRandom(_prompts)];
-    //    Console.WriteLine($" --- {_currentPrompt} --- ");
-    //    
-    //}
+
     public int GetRandom(int length)
     {
         int chosenIndex = _rand.Next(0,length);
@@ -48,34 +41,16 @@ public class Activity{ //parent class for the activities
     }
     public void DisplaySpinner()
     {
+        List<string> _spinner = new List<string>(){"|","\\","-","/","|","\\","-","/","|","\\"};
+
         Thread.Sleep(500);
-        Console.Write("|");
-        
-        Console.Write("\b \b"); // Erase the character
-        Console.Write("\\"); // Replace it with the \ character
-        Thread.Sleep(500);
-        Console.Write("\b \b"); // Erase the character
-        Console.Write("-"); // Replace it with the - character
-        Thread.Sleep(500);
-        Console.Write("\b \b"); // Erase the character
-        Console.Write("/"); // Replace it with the / character
-        Thread.Sleep(500);
-        Console.Write("\b \b"); // Erase the character
-        Console.Write("|"); // Replace it with the | character
-        Thread.Sleep(500);
-        Console.Write("\b \b"); // Erase the character
-        Console.Write("\\"); // Replace it with the \ character
-        Thread.Sleep(500);
-        Console.Write("\b \b"); // Erase the character
-        Console.Write("-"); // Replace it with the - character
-        Thread.Sleep(500);
-        Console.Write("\b \b"); // Erase the character
-        Console.Write("/"); // Replace it with the | character
-        Thread.Sleep(500);
-        Console.Write("\b \b"); // Erase the character
-        Console.Write("\\"); // Replace it with the \ character
-        Thread.Sleep(500);
-        Console.Write("\b \b"); // Erase the character
+        for(int j = 0; j < _spinner.Count; j++)
+        {
+            Console.Write(_spinner[j]); //write the current character
+            Thread.Sleep(500);
+            Console.Write("\b \b"); // Erase the character
+            
+        }
         
     }
 
