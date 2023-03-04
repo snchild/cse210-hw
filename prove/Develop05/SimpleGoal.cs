@@ -12,6 +12,7 @@ public class SimpleGoal : Goal
     public override int AccomplishGoal()
     {
         Console.WriteLine("running AccomplishGoal from SimpleGoal");
-        return 0;
+        _isFinished = true;
+        return GetPoints();
     }
 }

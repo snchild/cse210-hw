@@ -13,10 +13,12 @@ public class ChecklistGoal : Goal
     public override int AccomplishGoal()
     {
         Console.WriteLine("running AccomplishGoal from ChecklistGoal");
-        return 0;
+        _progress += 1;
+        return GetPoints();
     }
-    public override void SetGoalInfo(List<string> goalInfo)
+    public void SetPointsOnceDone(int points) //maybe
     {
         Console.WriteLine("running SetGoalInfo from ChecklistGoal");
+        _pointsOnceDone = points;
     }
 }
