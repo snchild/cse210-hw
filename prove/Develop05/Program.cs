@@ -1,4 +1,5 @@
 using System;
+using System.IO; 
 
 class Program
 {
@@ -70,6 +71,51 @@ class Program
                 break;    
         }
     }
+
+    static void LoadGoals(string fileName, List<Goal> goals)
+    {
+        string[] lines = System.IO.File.ReadAllLines(fileName); //read the file, line by line
+
+        foreach (string line in lines) //loop through the lines
+        {
+            string[] parts = line.Split("; "); //split the lines up into parts, separated by a ;
+
+            List<string> info = new List<string>(){parts[1],parts[2],parts[3]}; //name, description, points
+
+            //use a switch case to create the correct type of goal
+            switch(parts[0])
+            { //set the correct attributes to the right values
+                case "ChecklistGoal":
+                    ChecklistGoal goal1 = new ChecklistGoal();
+                    //add the goal's details to the goal
+                    goal1.SetGoalInfo(info);
+                    goal1.SetPointsOnceDone(int.Parse(parts[4])); //points for doing all
+                    goal1.SetProgress(int.Parse(parts[5])); //progress
+                    goal1.SetTimesTillDone(int.Parse(parts[6])); //times
+                   
+                    goals.Add(goal1); //add that goal to goals
+                    break;
+
+                case "EternalGoal":
+                    EternalGoal goal2 = new EternalGoal();
+                    //add the goal's details to the goal
+                    goal2.SetGoalInfo(info);
+                    goals.Add(goal2);
+                    break;
+
+                case "SimpleGoal":
+                    SimpleGoal goal3 = new SimpleGoal();
+                    goal3.SetGoalInfo(info);
+                    goals.Add(goal3);
+                    break;
+                
+            }
+                
+            
+            
+        }
+        //note: this won't replace any of the previous goals. to do otherwise, clear goals first
+    }
     static void Main(string[] args)
     {
         //create variables
@@ -95,6 +141,7 @@ class Program
                     CreateGoal(inputInt,inputString,inputList,goals);
 
                     break;
+                    
                 case 2: //list goals
                     Console.WriteLine("\nThe goals are: ");
                     for(int i = 0; i < goals.Count; i++) //loop through goals
@@ -103,27 +150,34 @@ class Program
                     }
                     
                     break;
+
                 case 3: //save goals
-                    //open file
-                    //loop through goals
-                        //call SaveToFile
-                    //close file
+                    //get file name
+                    Console.Write("What is the filename for the goal file? ");
+                    inputString = Console.ReadLine();
+
+                    using (StreamWriter outputFile = new StreamWriter(inputString))
+                    {
+                        outputFile.WriteLine($"{points}"); //add in the points
+                    }
+                    for(int i = 0; i < goals.Count; i++) //loop through goals
+                    {
+                        goals[i].SaveToFile(inputString); //call SaveToFile
+                    }
                     break;
+
                 case 4: //load goals
-                    //note: most of this should be in a function cause it's a long progess
-                    //read the file, line by line
-                    //loop through the lines
-                        //split the lines up into parts, separated by a ;
-                        //use a switch case to create the correct type of goal
-                            //set the correct attributes to the right values
-                        //add that goal to goals
-                        //note: this won't replace any of the previous goals. to do otherwise, clear goals first
+                    Console.Write("What is the filename for the goal file? ");
+                    inputString = Console.ReadLine();
+                    LoadGoals(inputString, goals);
                     break;
+
                 case 5: //record event
                     //prompt the user for the number of the goal they want to record for
                     //for that specific goal, call AccomplishGoal
                     //display the number of points they have now
                     break;
+
                 default: //quit or invalid entry
                     keepPlaying = false;
                     break;

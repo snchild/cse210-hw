@@ -6,6 +6,12 @@ public class ChecklistGoal : Goal
     public override void SaveToFile(string fileName) //wip
     {
         Console.WriteLine("running SaveToFile from ChecklistGoal");
+        List<string> info = GetGoalInfo();
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+        {
+            outputFile.WriteLine($"ChecklistGoal; {info[0]}; {info[1]}; {info[2]}; {_pointsOnceDone}; {_progress}; {_times}");
+            
+        }
     }
     public override void LoadFromFile(string fileName) //might go somewhere else
     {
@@ -24,6 +30,10 @@ public class ChecklistGoal : Goal
     public void SetTimesTillDone(int times)
     {
         _times = times;
+    }
+    public void SetProgress(int p)
+    {
+        _progress = p;
     }
     public override void DisplayGoal(int number)
     {

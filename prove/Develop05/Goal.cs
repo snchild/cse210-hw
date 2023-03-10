@@ -15,7 +15,7 @@ public abstract class Goal
     }
     public List<string> GetGoalInfo()
     {
-        List<string> info = new List<string>(){_name,_description,"_pointsForProgress"};
+        List<string> info = new List<string>(){_name,_description,$"{_pointsForProgress}"};
         return info;
     }
     public string GetName()  //wip

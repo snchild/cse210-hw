@@ -3,6 +3,12 @@ public class EternalGoal : Goal
     public override void SaveToFile(string fileName) //wip
     {
         Console.WriteLine("running SaveToFile from EternalGoal");
+        List<string> info = GetGoalInfo();
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+        {
+            outputFile.WriteLine($"EternalGoal; {info[0]}; {info[1]}; {info[2]}");
+            
+        }
     }
     public override void LoadFromFile(string fileName) //might go somewhere else
     {

@@ -4,6 +4,12 @@ public class SimpleGoal : Goal
     public override void SaveToFile(string fileName) //wip
     {
         Console.WriteLine("running SaveToFile from SimpleGoal");
+        List<string> info = GetGoalInfo();
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+        {
+            outputFile.WriteLine($"SimpleGoal; {info[0]}; {info[1]}; {info[2]}; {_isFinished}");
+            
+        }
     }
     public override void LoadFromFile(string fileName) //might go somewhere else
     {
