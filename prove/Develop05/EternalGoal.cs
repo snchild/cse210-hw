@@ -1,6 +1,6 @@
 public class EternalGoal : Goal
 {
-    public override void SaveToFile(string fileName) //wip
+    public override void SaveToFile(string fileName) 
     {
         List<string> info = GetGoalInfo();
         using (StreamWriter outputFile = new StreamWriter(fileName, true))

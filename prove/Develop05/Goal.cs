@@ -2,14 +2,12 @@ public abstract class Goal
 {
     private string _name;
     private string _description;
-    private int _pointsForProgress; //previously named pointsToComplete
+    private int _pointsForProgress; 
 
-    //don't forget the creation method
     public abstract void SaveToFile(string fileName);
     public abstract void DisplayGoal(int number);
-    public virtual int AccomplishGoal() //wip 
+    public virtual int AccomplishGoal() 
     {
-        Console.WriteLine("running AccomplishGoal from Goal");
         Console.WriteLine($"Congradualtions! You have earned {_pointsForProgress} points!");
         return _pointsForProgress;
     }
@@ -17,10 +15,6 @@ public abstract class Goal
     {
         List<string> info = new List<string>(){_name,_description,$"{_pointsForProgress}"};
         return info;
-    }
-    public string GetName()  //wip
-    {
-        return _name;
     }
     public int GetPoints()
     {

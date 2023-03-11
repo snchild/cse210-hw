@@ -1,7 +1,7 @@
 public class SimpleGoal : Goal
 {
     private bool _isFinished = false;
-    public override void SaveToFile(string fileName) //wip
+    public override void SaveToFile(string fileName) 
     {
         List<string> info = GetGoalInfo();
         using (StreamWriter outputFile = new StreamWriter(fileName, true))
@@ -10,9 +10,8 @@ public class SimpleGoal : Goal
             
         }
     }
-    public override int AccomplishGoal() //wip
+    public override int AccomplishGoal()
     {
-        Console.WriteLine("running AccomplishGoal from SimpleGoal");
         _isFinished = true;
         Console.WriteLine($"Congradualtions! You have earned {GetPoints()} points!");
         return GetPoints();

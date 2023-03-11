@@ -12,9 +12,8 @@ public class ChecklistGoal : Goal
             
         }
     }
-    public override int AccomplishGoal() //wip
+    public override int AccomplishGoal()
     {
-        Console.WriteLine("running AccomplishGoal from ChecklistGoal");
         _progress += 1;
         Console.WriteLine($"Congradualtions! You have earned {GetPoints()} points!");
         return GetPoints();
