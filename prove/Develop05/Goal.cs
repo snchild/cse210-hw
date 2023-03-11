@@ -6,11 +6,11 @@ public abstract class Goal
 
     //don't forget the creation method
     public abstract void SaveToFile(string fileName);
-    public abstract void LoadFromFile(string fileName);
     public abstract void DisplayGoal(int number);
     public virtual int AccomplishGoal() //wip 
     {
         Console.WriteLine("running AccomplishGoal from Goal");
+        Console.WriteLine($"Congradualtions! You have earned {_pointsForProgress} points!");
         return _pointsForProgress;
     }
     public List<string> GetGoalInfo()

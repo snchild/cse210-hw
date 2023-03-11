@@ -5,7 +5,7 @@ class Program
 {
     static void DisplayMenu(int points)
     {
-        Console.WriteLine($"You have {points} points.\n");
+        Console.WriteLine($"\nYou have {points} points.\n");
         Console.WriteLine("Menu options: ");
         Console.WriteLine("\t1. Create New Goal");
         Console.WriteLine("\t2. List Goals");
@@ -71,10 +71,12 @@ class Program
                 break;    
         }
     }
-
-    static void LoadGoals(string fileName, List<Goal> goals)
+    static int LoadGoals(string fileName, List<Goal> goals)
     {
         string[] lines = System.IO.File.ReadAllLines(fileName); //read the file, line by line
+
+        int newPoints = int.Parse(lines[0]); //deal with the points part
+        lines = lines.Skip(1).ToArray(); 
 
         foreach (string line in lines) //loop through the lines
         {
@@ -110,11 +112,9 @@ class Program
                     break;
                 
             }
-                
-            
-            
         }
         //note: this won't replace any of the previous goals. to do otherwise, clear goals first
+        return newPoints; 
     }
     static void Main(string[] args)
     {
@@ -169,13 +169,17 @@ class Program
                 case 4: //load goals
                     Console.Write("What is the filename for the goal file? ");
                     inputString = Console.ReadLine();
-                    LoadGoals(inputString, goals);
+                    points += LoadGoals(inputString, goals);
                     break;
 
                 case 5: //record event
                     //prompt the user for the number of the goal they want to record for
-                    //for that specific goal, call AccomplishGoal
-                    //display the number of points they have now
+                    Console.Write("What goal did you accomplish? ");
+                    inputString = Console.ReadLine();
+                    inputInt = int.Parse(inputString);
+    
+                    points += goals[inputInt-1].AccomplishGoal();//for that specific goal, call AccomplishGoal
+                    Console.WriteLine($"You now have {points} points. "); //display updated points
                     break;
 
                 default: //quit or invalid entry

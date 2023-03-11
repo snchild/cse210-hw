@@ -3,24 +3,20 @@ public class ChecklistGoal : Goal
     private int _progress;
     private int _times;
     private int _pointsOnceDone;
-    public override void SaveToFile(string fileName) //wip
+    public override void SaveToFile(string fileName)
     {
-        Console.WriteLine("running SaveToFile from ChecklistGoal");
         List<string> info = GetGoalInfo();
-        using (StreamWriter outputFile = new StreamWriter(fileName))
+        using (StreamWriter outputFile = new StreamWriter(fileName,true))//"true" keeps it from writing over the file
         {
             outputFile.WriteLine($"ChecklistGoal; {info[0]}; {info[1]}; {info[2]}; {_pointsOnceDone}; {_progress}; {_times}");
             
         }
     }
-    public override void LoadFromFile(string fileName) //might go somewhere else
-    {
-        Console.WriteLine("running LoadFromFile from ChecklistGoal");
-    }
     public override int AccomplishGoal() //wip
     {
         Console.WriteLine("running AccomplishGoal from ChecklistGoal");
         _progress += 1;
+        Console.WriteLine($"Congradualtions! You have earned {GetPoints()} points!");
         return GetPoints();
     }
     public void SetPointsOnceDone(int points)
