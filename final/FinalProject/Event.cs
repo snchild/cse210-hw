@@ -22,7 +22,12 @@ public abstract class Event
     public List<string> GetEventDetails() //wip
     {
         Console.WriteLine("running GetEventDetails from Event");
-        List<string> info = new List<string>();
+        List<string> info = new List<string>(){_name};
+        info.Add($"{_startTime[0]}");
+        info.Add($"{_startTime[1]}");
+        info.Add($"{_endTime[0]}");
+        info.Add($"{_endTime[1]}");
+        info.Add($"{_isPast}");
         return info;
     }
     public List<int> GetStartTime() //wip

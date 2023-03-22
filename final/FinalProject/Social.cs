@@ -17,14 +17,22 @@ public class Social: Event
     public override void DisplayEventDetails() //wip
     {
         Console.WriteLine("running DisplayEventDetails from Social ");
+        //call GetEventDetails
+        //display info from GetEventDetails
+        //display _whoWith, _cost, _location, and _description
     }
 
     public override void TimePast() //wip
     {
         Console.WriteLine("running TimePast from Social ");
+        //ask the user how the event went
+        //asks the user to rate their experience out of 5 stars
     }
     public override void SaveEvent(string fileName) //wip
     {
         Console.WriteLine("running SaveEvent from Social ");
+        //call GetEventDetails
+        //opens fileName
+        //writes event type and all info
     }
 }
