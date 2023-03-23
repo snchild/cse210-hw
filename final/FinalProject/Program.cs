@@ -122,7 +122,7 @@ class Program
 
                 case "Social":
                     List<string> materialsList5 = new List<string>();//create materials list
-                    for(int j=10; j < parts.Length; j++ )
+                    for(int j=11; j < parts.Length; j++ )
                     {
                         materialsList5.Add(parts[j]);
                     }
