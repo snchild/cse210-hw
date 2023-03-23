@@ -5,13 +5,169 @@ class Program
     static List<Event> CreateEvent(List<Event> myEvents) //wip
     {
         Console.WriteLine("running CreateEvent from Program");
-        //display the list of event types
+
+        Console.WriteLine("\nHere is the list of even types: "); //display the list of event types
+        Console.WriteLine("\t1. Chores");
+        Console.WriteLine("\t2. Class time");
+        Console.WriteLine("\t3. Homework");
+        Console.WriteLine("\t4. Physical");
+        Console.WriteLine("\t5. Social");
+        Console.WriteLine("\t6. Spiritual");
+        
         //prompt user for type of event they want to create
-        //ask for name, start time, and end time
+        Console.Write("What type of event would you like to make? ");
+        int option = int.Parse(Console.ReadLine());
+
+        Console.Write("What is the name of your event? "); //ask for name, start time, and end time
+        string name = Console.ReadLine();
+        Console.Write("What is the day your event starts? ");
+        string startDay = Console.ReadLine();
+        Console.Write("What is the hour your event starts? ");
+        string startHour = Console.ReadLine();
+        Console.Write("What is the minute your event starts? ");
+        string startMin = Console.ReadLine();
+        Console.Write("What is the day your event ends? ");
+        string endDay = Console.ReadLine();
+        Console.Write("What is the hour your event ends? ");
+        string endHour = Console.ReadLine();
+        Console.Write("What is the minute your event ends? ");
+        string endMin = Console.ReadLine();
+
+        //combine all into info
+        List<string> info = new List<string>(){name, startDay, startHour, startMin, endDay, endHour, endMin, $"{false}"};
+
         //stretch goal: check whether time overlaps with another event
+
         //create corresponding event (use switch case)
-        //prompt the user for the needed details
-        //add that event to the event list
+        switch(option)
+        {
+            case 1: //chores
+                //prompt the user for the needed details
+                Console.Write("How many materials do you need for your chores? ");
+                int numMat1 = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("What materials do you need?");
+                List<string> mat1 = new List<string>();
+                for(int j=0; j < numMat1; j++)
+                {
+                    string response = Console.ReadLine();
+                    mat1.Add(response);
+                }
+                Chores event1 = new Chores(info, mat1);
+                myEvents.Add(event1); //add that event to the event list
+                break;
+
+            case 2: //class time
+                //prompt the user for the needed details
+                Console.Write("Where is your class? ");
+                string where2 = Console.ReadLine();
+
+                Console.Write("Who is your teacher? ");
+                string teacher = Console.ReadLine();
+
+                Console.Write("Is attendance required? ");
+                bool attendance = bool.Parse(Console.ReadLine());
+
+                Console.Write("How many materials do you need for your class? "); //get materials
+                int numMat2 = int.Parse(Console.ReadLine());
+                Console.WriteLine("What materials do you need?");
+                List<string> mat2 = new List<string>();
+                for(int j=0; j < numMat2; j++)
+                {
+                    string response = Console.ReadLine();
+                    mat2.Add(response);
+                }
+        
+                Classtime event2 = new Classtime(info, where2, teacher, attendance, mat2); 
+                myEvents.Add(event2); //add that event to the event list
+                break;
+
+            case 3: //homework
+                //prompt the user for the needed details
+                Console.Write("Where are you doing your homework? ");
+                string where3 = Console.ReadLine();
+
+                Console.Write("When is this homework due? ");
+                string dueDate = Console.ReadLine();
+
+                Console.Write("How many points is this homework worth? ");
+                int points = int.Parse(Console.ReadLine());
+
+                Console.Write("How many materials do you need for your homework? "); //get materials
+                int numMat3 = int.Parse(Console.ReadLine());
+                Console.WriteLine("What materials do you need?");
+                List<string> mat3 = new List<string>();
+                for(int j=0; j < numMat3; j++)
+                {
+                    string response = Console.ReadLine();
+                    mat3.Add(response);
+                }
+                
+                Homework event3 = new Homework(info, where3, dueDate, points, mat3);
+                myEvents.Add(event3); //add that event to the event list
+                break;
+
+            case 4: //physical
+                //prompt the user for the needed details
+                Console.Write("What is your goal for this event? ");
+                string goal = Console.ReadLine();
+
+                Console.Write("How many materials do you need for your workout? "); //get materials
+                int numMat4 = int.Parse(Console.ReadLine());
+                Console.WriteLine("What materials do you need?");
+                List<string> mat4 = new List<string>();
+                for(int j=0; j < numMat4; j++)
+                {
+                    string response = Console.ReadLine();
+                    mat4.Add(response);
+                }
+
+                Physical event4 = new Physical(info, goal, mat4);
+                myEvents.Add(event4); //add that event to the event list
+                break;
+
+            case 5: //social
+                //prompt the user for the needed details
+                Console.Write("What is a description of this event? ");
+                string description5 = Console.ReadLine();
+                
+                Console.Write("What do you anticipate spending for this event? $");
+                double cost = double.Parse(Console.ReadLine());
+
+                Console.Write("Where is this happening? ");
+                string where5 = Console.ReadLine();
+
+                Console.Write("How many people are also going? "); //get people
+                int numPep5 = int.Parse(Console.ReadLine());
+                Console.WriteLine("Who are those people?");
+                List<string> people5 = new List<string>();
+                for(int j=0; j < numPep5; j++)
+                {
+                    string response = Console.ReadLine();
+                    people5.Add(response);
+                }
+                
+                Social event5 = new Social(info, cost, where5, description5, people5);
+                myEvents.Add(event5); //add that event to the event list
+                break;
+
+            case 6: //spiritual
+                //prompt the user for the needed details
+                Console.Write("How many people are also going? "); //get people
+                int numPep6 = int.Parse(Console.ReadLine());
+                Console.WriteLine("Who are those people?");
+                List<string> people6 = new List<string>();
+                for(int j=0; j < numPep6; j++)
+                {
+                    string response = Console.ReadLine();
+                    people6.Add(response);
+                }
+
+                Spiritual event6 = new Spiritual(info, people6);
+                myEvents.Add(event6); //add that event to the event list
+                break;
+        }
+        
         return myEvents; //return the updated event list
     }
     static List<Event> CancelEvent(List<Event> myEvents) //wip
