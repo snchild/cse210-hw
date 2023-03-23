@@ -32,7 +32,11 @@ public class Homework: School
         Console.WriteLine("running SaveEvent from Homework ");
         //call GetEventDetails
         //call GetLocationAndMaterials
-        //opens fileName
-        //writes event type and all info
+        using (StreamWriter outputFile = new StreamWriter(fileName, true))//open fileName
+        {
+            //write event type and all info
+            outputFile.WriteLine($"; ");
+            
+        }
     }
 }

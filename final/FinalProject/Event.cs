@@ -21,8 +21,17 @@ public abstract class Event
     {
         Console.WriteLine("running GetEventDetails from Event");
         List<string> info = new List<string>(){_name};
-        info.Add($"{_startTime}");
-        info.Add($"{_endTime}");
+        List<int> startInfo = _startTime.GetDateAndTime();
+        List<int> endInfo = _endTime.GetDateAndTime();
+
+        for(int j=0; j < startInfo.Count; j++)
+        {
+            info.Add($"{startInfo[j]}");
+        }
+        for(int k=0; k < startInfo.Count; k++)
+        {
+            info.Add($"{endInfo[k]}");
+        }
         info.Add($"{_isPast}");
         return info;
     }

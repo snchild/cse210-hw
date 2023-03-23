@@ -30,7 +30,11 @@ public class Physical: Event
     {
         Console.WriteLine("running SaveEvent from Physical ");
         //call GetEventDetails
-        //opens fileName
-        //writes event type and all info
+        using (StreamWriter outputFile = new StreamWriter(fileName, true))//open fileName
+        {
+            //write event type and all info
+            outputFile.WriteLine($"; ");
+            
+        }
     }
 }

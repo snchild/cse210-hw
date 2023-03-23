@@ -29,9 +29,26 @@ public class Classtime: School
     public override void SaveEvent(string fileName) //wip
     {
         Console.WriteLine("running SaveEvent from Classtime ");
-        //call GetEventDetails
-        //call GetLocationAndMaterials
-        //opens fileName
-        //writes event type and all info
+
+        List<string> info = GetEventDetails(); //call GetEventDetails
+        List<string> locAndMat = GetLocationAndMaterials(); //call GetLocationAndMaterials
+
+        using (StreamWriter outputFile = new StreamWriter(fileName, true))//open fileName
+        {
+            //write List<string> info, string where, string teacher, bool attendance, List<string> materials
+            //info order: name, start day, start hour, start min, end day, end hour, end min, _isPast
+            outputFile.Write($"Classtime; {info[0]}; {info[1]}; {info[2]}; {info[3]}; {info[4]}; {info[5]}; {info[6]}; {info[7]}");
+
+            //this writes where, teacher, and attendace
+            outputFile.Write($"; {locAndMat[0]}; {_teacherName}; {_attendanceRequired}");
+
+            //writes the list of materials
+            for (int j = 1; j < locAndMat.Count; j++)
+            {
+                outputFile.Write($"; {locAndMat[j]}");
+            }
+            outputFile.WriteLine($"\n");
+            
+        }
     }
 }

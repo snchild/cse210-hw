@@ -148,9 +148,16 @@ class Program
     static void SaveSchedule(List<Event> myEvents) //wip
     {
         Console.WriteLine("running SaveSchedule from Program");
-        //propmt the user for the file name
-        //loop through events
-            //run SaveEvent() for each event
+        
+        //prompt the user for the file name
+        Console.Write("What is the name of your file? ");
+        string fileName = Console.ReadLine();
+
+        for (int j = 0; j < myEvents.Count; j++)//loop through events
+        {
+            myEvents[j].SaveEvent(fileName); //run SaveEvent() for each event
+        }
+            
     }
     static List<Event> SortEvents(List<Event> myEvents) //wip
     {
