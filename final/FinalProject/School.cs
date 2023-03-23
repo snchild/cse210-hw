@@ -15,6 +15,13 @@ public abstract class School: Event
     {
         Console.WriteLine("running GetLocationandMaterials from School");
         List<string> locationAndMaterials = new List<string>();
+        
+        locationAndMaterials.Add(_location);
+        for(int j=0; j < _materialsNeeded.Count; j++)
+        {
+            locationAndMaterials.Add(_materialsNeeded[j]);
+        }
+
         return locationAndMaterials;
     }
 

@@ -47,7 +47,7 @@ public class Classtime: School
             {
                 outputFile.Write($"; {locAndMat[j]}");
             }
-            outputFile.WriteLine($"\n");
+            outputFile.Write($"\n");
             
         }
     }
