@@ -6,7 +6,7 @@ public class Social: Event
     private string _location;
     private string _description;
 
-    public Social(List<string> info, List<string> people, double cost, string where, string description): base(info)//constructor here
+    public Social(List<string> info, double cost, string where, string description, List<string> people): base(info)//constructor here
     {
         _whoWith = people;
         _cost = cost;

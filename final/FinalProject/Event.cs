@@ -9,7 +9,6 @@ public abstract class Event
     public Event(List<string> info) //constructor here
     {
         _name = info[0];
-        int date = int.Parse(info[1]);
         _startTime = new DateTime(int.Parse(info[1]),int.Parse(info[2]),int.Parse(info[3]));
         _endTime = new DateTime(int.Parse(info[4]),int.Parse(info[5]),int.Parse(info[6]));
         _isPast = false;

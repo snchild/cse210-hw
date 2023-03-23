@@ -1,10 +1,10 @@
 public class Homework: School
 {
     //attributes here
-    private string _whenDue; //might be a different format
+    private string _whenDue; //might be a different format  <- should it be a DateTime?
     private int _points;
 
-    public Homework(List<string> info, string where, List<string> materials, string dueDate, int points): base(info, where, materials)//constructor here
+    public Homework(List<string> info, string where, string dueDate, int points, List<string> materials): base(info, where, materials)//constructor here
     {
         _whenDue = dueDate;
         _points = points;

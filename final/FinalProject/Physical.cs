@@ -4,7 +4,7 @@ public class Physical: Event
     private List<string> _materials = new List<string>();
     private string _goal;
 
-    public Physical(List<string> info, List<string> materials, string goal): base(info)//constructor here
+    public Physical(List<string> info, string goal, List<string> materials): base(info)//constructor here
     {
         _materials = materials;
         _goal = goal;

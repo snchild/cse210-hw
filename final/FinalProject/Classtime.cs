@@ -4,7 +4,7 @@ public class Classtime: School
     private string _teacherName;
     private bool _attendanceRequired;
 
-    public Classtime(List<string> info, string where, List<string> materials, string teacher, bool attendance): base(info, where, materials)//constructor here
+    public Classtime(List<string> info, string where, string teacher, bool attendance, List<string> materials): base(info, where, materials)//constructor here
     {
         _teacherName = teacher;
         _attendanceRequired = attendance;
