@@ -173,8 +173,19 @@ class Program
     static List<Event> CancelEvent(List<Event> myEvents) //wip
     {
         Console.WriteLine("running CancelEvent from Program");
+        
         //prompt the user for the number of event to be deleted
-        //delete that entry in myEvents
+        Console.Write("\nWhat is the number of the event you would like to cancel? ");
+        int eventCancel = int.Parse(Console.ReadLine()) - 1; //this gets the index of the event
+        
+        if(eventCancel < myEvents.Count) //check if the input is valid
+        {
+            myEvents.RemoveAt(eventCancel); //delete that entry in myEvents
+        }
+        else{
+            Console.WriteLine("That event didn't exist.");
+        }
+        
         return myEvents; //return updated event list
     }
     static void CheckTime(List<Event> myEvents) //wip
@@ -334,7 +345,7 @@ class Program
         do{
             DisplayOptions(); //display the options
 
-            Console.WriteLine("BTW, only CreateEvent, LoadEvent, and SaveEvent have things happening");
+            //Console.WriteLine("BTW, only CreateEvent, LoadEvent, and SaveEvent have things happening");
 
             Console.Write("Which option would you like? "); //prompt the user for their option
             inputString = Console.ReadLine(); 
