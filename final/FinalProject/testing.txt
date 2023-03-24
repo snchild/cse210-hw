@@ -1,1 +1,3 @@
 Social; name testing; 3; 5; 21; 3; 7; 12; false; 3.29; testinglocation; this is my description; Sara; Susan; Another Person
+Physical; physical name; 1; 2; 31; 1; 3; 42; false; this goal to be met; material one, material two, material three
+Classtime; optics; 2; 2; 14; 2; 55; 55; False; romney; turcotte; True; pencil; paper

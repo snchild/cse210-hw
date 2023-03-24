@@ -20,13 +20,13 @@ class Program
 
         Console.Write("What is the name of your event? "); //ask for name, start time, and end time
         string name = Console.ReadLine();
-        Console.Write("What is the day your event starts? ");
+        Console.Write("What day does your event start? (monday is 2, friday is 6) ");
         string startDay = Console.ReadLine();
         Console.Write("What is the hour your event starts? ");
         string startHour = Console.ReadLine();
         Console.Write("What is the minute your event starts? ");
         string startMin = Console.ReadLine();
-        Console.Write("What is the day your event ends? ");
+        Console.Write("What day day does your event end? (monday is 2, friday is 6) ");
         string endDay = Console.ReadLine();
         Console.Write("What is the hour your event ends? ");
         string endHour = Console.ReadLine();
@@ -65,7 +65,7 @@ class Program
                 Console.Write("Who is your teacher? ");
                 string teacher = Console.ReadLine();
 
-                Console.Write("Is attendance required? ");
+                Console.Write("Attendance is required, true or false? ");
                 bool attendance = bool.Parse(Console.ReadLine());
 
                 Console.Write("How many materials do you need for your class? "); //get materials
@@ -333,6 +333,8 @@ class Program
 
         do{
             DisplayOptions(); //display the options
+
+            Console.WriteLine("BTW, only CreateEvent, LoadEvent, and SaveEvent have things happening");
 
             Console.Write("Which option would you like? "); //prompt the user for their option
             inputString = Console.ReadLine(); 
