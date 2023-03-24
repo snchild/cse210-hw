@@ -191,10 +191,31 @@ class Program
     static void CheckTime(List<Event> myEvents) //wip
     {
         Console.WriteLine("running CheckTime from Program");
+        
         //prompt user for day and time
+        Console.Write("What day is it? (1 is Sunday, 7 is Saturday)");
+        int day = int.Parse(Console.ReadLine());
+        Console.Write("What hour is it? ");
+        int hour = int.Parse(Console.ReadLine());
+        Console.Write("What minute is it? ");
+        int minute = int.Parse(Console.ReadLine());
+        
         //loop through event list
-            //if _isPast is false, call TimePast() for the event
-        //display the name of the event that's next up 
+        for(int j=0; j < myEvents.Count; j++)
+        {
+            
+            bool hasPassed = myEvents[j].HasPassed();
+            List<int> time = myEvents[j].GetStartTime();
+
+            //this is when isTime hasn't been called, but the time has passed
+            if(!hasPassed && ((time[0] < day) || ((time[0] == day) && (time[1] < hour)) || ((time[0] == day) && (time[1] == hour) && (time[2] < minute))) )
+            {
+                //if _isPast is false, call TimePast() for the event
+                myEvents[j].TimePast();
+            }
+        }
+            
+        //stretch goal: display the name of the event that's next up 
     }
     static void DisplayOptions()
     {

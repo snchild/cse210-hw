@@ -17,6 +17,10 @@ public abstract class Event
     public abstract void DisplayEventDetails();
     public abstract void TimePast();
     public abstract void SaveEvent(string fileName);
+    public void SetIsPast()
+    {
+        _isPast = true;
+    }
     public List<string> GetEventDetails() //wip
     {
         Console.WriteLine("running GetEventDetails from Event");
@@ -35,11 +39,15 @@ public abstract class Event
         info.Add($"{_isPast}");
         return info;
     }
-    public DateTime GetStartTime() //wip
+    public List<int> GetStartTime() //wip
     {
         Console.WriteLine("running GetStartTime from Event");
-        return _startTime;
+        return _startTime.GetDateAndTime();
     }
     
+    public bool HasPassed() //wip
+    {
+        return _isPast;
+    }
      
 }

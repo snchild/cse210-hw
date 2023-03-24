@@ -26,6 +26,7 @@ public class Homework: School
         //asks the user if they finished their homework
         //if no, it tells them to schedule another homework event
         //can i make them?
+        SetIsPast();
     }
     public override void SaveEvent(string fileName) //wip
     {

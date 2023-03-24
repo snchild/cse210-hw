@@ -25,6 +25,7 @@ public class Classtime: School
     {
         Console.WriteLine("running TimePast from  Classtime");
         //displays a message saying class is over
+        SetIsPast();
     }
     public override void SaveEvent(string fileName) //wip
     {

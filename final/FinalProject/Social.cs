@@ -27,6 +27,7 @@ public class Social: Event
         Console.WriteLine("running TimePast from Social ");
         //ask the user how the event went
         //asks the user to rate their experience out of 5 stars
+        SetIsPast();
     }
     public override void SaveEvent(string fileName) //wip
     {

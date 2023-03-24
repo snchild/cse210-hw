@@ -20,6 +20,7 @@ public class Chores: Event
     {
         Console.WriteLine("running TimePast from Chores ");
         //congradulates the user on completing their chores
+        SetIsPast();
     }
     public override void SaveEvent(string fileName) //wip
     {

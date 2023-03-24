@@ -23,6 +23,7 @@ public class Spiritual: Event
         Console.WriteLine("running TimePast from Spiritual ");
         //ask user what insight they gained from the event
         //save that to _journal
+        SetIsPast();
     }
     public override void SaveEvent(string fileName) //wip
     {

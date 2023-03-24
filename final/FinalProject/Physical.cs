@@ -25,6 +25,7 @@ public class Physical: Event
         //ask the user if they would like to make a new goal
             //if so, ask them what their new goal is
             //set _goal to their response
+        SetIsPast();
     }
     public override void SaveEvent(string fileName) //wip
     {
