@@ -20,13 +20,13 @@ class Program
 
         Console.Write("What is the name of your event? "); //ask for name, start time, and end time
         string name = Console.ReadLine();
-        Console.Write("What day does your event start? (monday is 2, friday is 6) ");
+        Console.Write("What day does your event start? (Sunday is 1, Saturday 7) ");
         string startDay = Console.ReadLine();
         Console.Write("What is the hour your event starts? ");
         string startHour = Console.ReadLine();
         Console.Write("What is the minute your event starts? ");
         string startMin = Console.ReadLine();
-        Console.Write("What day day does your event end? (monday is 2, friday is 6) ");
+        Console.Write("What day does your event end? (Sunday is 1, Saturday 7) ");
         string endDay = Console.ReadLine();
         Console.Write("What is the hour your event ends? ");
         string endHour = Console.ReadLine();
@@ -248,7 +248,6 @@ class Program
         else{
             Console.WriteLine("That event didn't exist.");
         }
-         
     }
     static List<Event> LoadSchedule(List<Event> myEvents) //wip
     {
@@ -385,7 +384,7 @@ class Program
             switch(option)
             {
                 case 1: //display schedule
-                    DisplayOptions();
+                    DisplaySchedule(myEvents);
                     break;
                 case 2: //create event
                     myEvents = CreateEvent(myEvents);

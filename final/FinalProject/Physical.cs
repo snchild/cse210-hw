@@ -36,7 +36,7 @@ public class Physical: Event
         {
             //order: List<string> info, string goal, List<string> materials
             //info order: name, start day, start hour, start min, end day, end hour, end min, _isPast
-            outputFile.Write($"Classtime; {info[0]}; {info[1]}; {info[2]}; {info[3]}; {info[4]}; {info[5]}; {info[6]}; {info[7]}");
+            outputFile.Write($"Physical; {info[0]}; {info[1]}; {info[2]}; {info[3]}; {info[4]}; {info[5]}; {info[6]}; {info[7]}");
 
             outputFile.Write($"; {_goal}");
             //writes the list of materials

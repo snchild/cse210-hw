@@ -33,7 +33,7 @@ public class Spiritual: Event
         {
             //order: List<string> info, List<string> people
             //info order: name, start day, start hour, start min, end day, end hour, end min, _isPast
-            outputFile.Write($"Classtime; {info[0]}; {info[1]}; {info[2]}; {info[3]}; {info[4]}; {info[5]}; {info[6]}; {info[7]}");
+            outputFile.Write($"Spiritual; {info[0]}; {info[1]}; {info[2]}; {info[3]}; {info[4]}; {info[5]}; {info[6]}; {info[7]}");
 
             for (int j = 1; j < _whoWith.Count; j++) //writes the list of people
             {
