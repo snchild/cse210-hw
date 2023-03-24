@@ -238,8 +238,17 @@ class Program
     static void DisplayEventInfo(List<Event> myEvents) //wip
     {
         Console.WriteLine("running DisplayEventInfo from Program");
-        //prompt the user for the event number
-        //run DisplayEventDetails() for that event 
+        Console.Write("Which event would you like to see the details for? "); //prompt user for event number
+        int detailedEvent = int.Parse(Console.ReadLine()) - 1; //this gets the index of the event
+        
+        if(detailedEvent < myEvents.Count) //check if the input is valid
+        {
+            myEvents[detailedEvent].DisplayEventDetails(); //run DisplayEventDetails() for that event
+        }
+        else{
+            Console.WriteLine("That event didn't exist.");
+        }
+         
     }
     static List<Event> LoadSchedule(List<Event> myEvents) //wip
     {
