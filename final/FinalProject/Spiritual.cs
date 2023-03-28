@@ -8,11 +8,11 @@ public class Spiritual: Event
         _whoWith = people;
     }
     //methods here
-    public override void DisplayEventDetails(List<string> days) //wip
+    public override void DisplayEventDetails(List<string> days) 
     {
         List<string> info = GetEventDetails(); //call GetEventDetails
         Console.WriteLine($"\nSpiritual: {info[0]} "); //display info from GetEventDetails
-        Console.WriteLine($"When: {days[int.Parse(info[1])]} at {info[2]}:{info[3]} until {info[5]}:{info[6]}");
+        Console.WriteLine($"When: {days[int.Parse(info[1]) - 1]} at {info[2]}:{info[3]} until {info[5]}:{info[6]}");
         Console.WriteLine($"\nOther People: "); //display _whoWith
         for(int j=0; j < _whoWith.Count; j++)
         {

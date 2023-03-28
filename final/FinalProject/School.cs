@@ -20,7 +20,6 @@ public abstract class School: Event
         {
             locationAndMaterials.Add(_materialsNeeded[j]);
         }
-
         return locationAndMaterials;
     }
 

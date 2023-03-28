@@ -237,7 +237,7 @@ class Program
             Console.WriteLine($"\t{i+1}. {days[ int.Parse(info[1]) - 1 ]}\tfrom {info[2]}:{info[3]} to {info[5]}:{info[6]} - {info[0]}");
         }
     }
-    static void DisplayEventInfo(List<Event> myEvents) //wip
+    static void DisplayEventInfo(List<Event> myEvents)
     {
         List<string> days = new List<string>(){"Sunday", "Monday", "Tuesday","Wednesday", "Thursday","Friday","Saturday"};
 
@@ -252,7 +252,7 @@ class Program
             Console.WriteLine("That event didn't exist.");
         }
     }
-    static List<Event> LoadSchedule(List<Event> myEvents) //wip
+    static List<Event> LoadSchedule(List<Event> myEvents)
     {
         //prompt the user for the file name
         Console.Write("What is the name of your file? ");
@@ -286,7 +286,7 @@ class Program
                     bool attendance = bool.Parse(parts[11]); //change attendace to correct form
                     
                     List<string> materialsList2 = new List<string>();//create materials list
-                    for(int j=11; j < parts.Length; j++ )
+                    for(int j=12; j < parts.Length; j++ )
                     {
                         materialsList2.Add(parts[j]);
                     }
@@ -343,7 +343,7 @@ class Program
         }
         return myEvents; //return updated event list 
     }
-    static void SaveSchedule(List<Event> myEvents) //wip
+    static void SaveSchedule(List<Event> myEvents)
     {       
         //prompt the user for the file name
         Console.Write("What is the name of your file? ");
@@ -367,7 +367,7 @@ class Program
        
         return myEvents; //return updated event list
     }
-    static void Main(string[] args) //wip
+    static void Main(string[] args)
     {
         //create variables
         bool keepGoing = true;

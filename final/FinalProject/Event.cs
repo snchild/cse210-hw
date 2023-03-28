@@ -21,7 +21,7 @@ public abstract class Event
     {
         _isPast = true;
     }
-    public List<string> GetEventDetails() //wip
+    public List<string> GetEventDetails()
     {
         List<string> info = new List<string>(){_name};
         List<int> startInfo = _startTime.GetDateAndTime();
@@ -38,17 +38,17 @@ public abstract class Event
         info.Add($"{_isPast}");
         return info;
     }
-    public List<int> GetStartTime() //wip
+    public List<int> GetStartTime() 
     {
         return _startTime.GetDateAndTime();
     }
     
-    public bool HasPassed() //wip
+    public bool HasPassed() 
     {
         return _isPast;
     }
 
-    public string GetName() //wip
+    public string GetName() 
     {
         return _name;
     } 

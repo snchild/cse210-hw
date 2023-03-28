@@ -10,11 +10,11 @@ public class Physical: Event
         _goal = goal;
     }
     //methods here
-    public override void DisplayEventDetails(List<string> days) //wip
+    public override void DisplayEventDetails(List<string> days) 
     {
         List<string> info = GetEventDetails(); //call GetEventDetails
         Console.WriteLine($"\nPhysical: {info[0]} "); //display info from GetEventDetails
-        Console.WriteLine($"When: {days[int.Parse(info[1])]} at {info[2]}:{info[3]} until {info[5]}:{info[6]}");
+        Console.WriteLine($"When: {days[int.Parse(info[1]) - 1]} at {info[2]}:{info[3]} until {info[5]}:{info[6]}");
         
         Console.WriteLine($"\nGoal for the workout: {_goal}"); //display _materials and _goal
         Console.WriteLine($"\nMaterials: "); //display materials
@@ -49,7 +49,7 @@ public class Physical: Event
 
             outputFile.Write($"; {_goal}");
             //writes the list of materials
-            for (int j = 1; j < _materials.Count; j++)
+            for (int j = 0; j < _materials.Count; j++)
             {
                 outputFile.Write($"; {_materials[j]}");
             }

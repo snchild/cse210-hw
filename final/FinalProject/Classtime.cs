@@ -11,13 +11,13 @@ public class Classtime: School
     }
 
     //methods here
-    public override void DisplayEventDetails(List<string> days) //wip
+    public override void DisplayEventDetails(List<string> days) 
     {
         List<string> info = GetEventDetails(); //call GetEventDetails
         List<string> locAndMat = GetLocationAndMaterials();//call GetLocationAndMaterials
 
         Console.WriteLine($"\nClass: {info[0]} "); //display info from GetEventDetails
-        Console.WriteLine($"When: {days[int.Parse(info[1])]} at {info[2]}:{info[3]} until {info[5]}:{info[6]}");
+        Console.WriteLine($"When: {days[int.Parse(info[1]) - 1]} at {info[2]}:{info[3]} until {info[5]}:{info[6]}");
         Console.WriteLine($"Teacher: {_teacherName}"); //display _teacherName
         Console.WriteLine($"Attendance is required: {_attendanceRequired}");
         Console.WriteLine($"Location: {locAndMat[0]}"); //display info from GetLocationAndMaterials

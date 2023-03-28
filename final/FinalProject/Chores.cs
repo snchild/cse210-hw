@@ -8,7 +8,7 @@ public class Chores: Event
         _materials = materials;
     }
     //methods here
-    public override void DisplayEventDetails(List<string> days) //wip
+    public override void DisplayEventDetails(List<string> days)
     {
         List<string> info = GetEventDetails(); //call GetEventDetails
         Console.WriteLine($"\nChores: {info[0]} "); //display info from GetEventDetails

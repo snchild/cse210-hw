@@ -15,11 +15,11 @@ public class Social: Event
         _description = description;
     }
     //methods here
-    public override void DisplayEventDetails(List<string> days) //wip
+    public override void DisplayEventDetails(List<string> days) 
     {
         List<string> info = GetEventDetails(); //call GetEventDetails
         Console.WriteLine($"\nSocial: {info[0]} "); //display info from GetEventDetails
-        Console.WriteLine($"When: {days[int.Parse(info[1])]} at {info[2]}:{info[3]} until {info[5]}:{info[6]}");
+        Console.WriteLine($"When: {days[int.Parse(info[1]) - 1]} at {info[2]}:{info[3]} until {info[5]}:{info[6]}");
 
         //display _cost, _location, and _description
         Console.WriteLine($"Expected Cost: {_cost}\nLocation: {_location}\nDescription: {_description}");
@@ -53,7 +53,7 @@ public class Social: Event
 
             outputFile.Write($"; {_cost}; {_location}; {_description}");
             //writes the list of people
-            for (int j = 1; j < _whoWith.Count; j++)
+            for (int j = 0; j < _whoWith.Count; j++)
             {
                 outputFile.Write($"; {_whoWith[j]}");
             }

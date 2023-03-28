@@ -11,13 +11,13 @@ public class Homework: School
     }
 
     //methods here
-    public override void DisplayEventDetails(List<string> days) //wip
+    public override void DisplayEventDetails(List<string> days) 
     {
         List<string> info = GetEventDetails(); //call GetEventDetails
         List<string> locAndMat = GetLocationAndMaterials(); //call GetLocationAndMaterials
 
         Console.WriteLine($"\nHomework: {info[0]} "); //display info from GetEventDetails
-        Console.WriteLine($"When: {days[int.Parse(info[1])]} at {info[2]}:{info[3]} until {info[5]}:{info[6]}");
+        Console.WriteLine($"When: {days[int.Parse(info[1]) - 1]} at {info[2]}:{info[3]} until {info[5]}:{info[6]}");
         Console.WriteLine($"Due Date: {_whenDue}\nPoints: {_points}"); //display _whenDue and _points
         Console.WriteLine($"Location: {locAndMat[0]}"); //display info from GetLocationAndMaterials
         
@@ -27,7 +27,7 @@ public class Homework: School
             Console.WriteLine($"{locAndMat[j]}");
         }
     }
-    public override void TimePast() //wip
+    public override void TimePast() 
     {
         //asks the user if they finished their homework
         Console.Write($"Did you finish your {GetName()}? (y/n) ");
