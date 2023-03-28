@@ -40,7 +40,6 @@ public abstract class Event
     }
     public List<int> GetStartTime() //wip
     {
-        Console.WriteLine("running GetStartTime from Event");
         return _startTime.GetDateAndTime();
     }
     

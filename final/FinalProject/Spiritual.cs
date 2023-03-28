@@ -10,10 +10,8 @@ public class Spiritual: Event
     //methods here
     public override void DisplayEventDetails(List<string> days) //wip
     {
-        Console.WriteLine("running DisplayEventDetails from Spiritual ");
-
         List<string> info = GetEventDetails(); //call GetEventDetails
-        Console.WriteLine($"\n{info[0]}: "); //display info from GetEventDetails
+        Console.WriteLine($"\nSpiritual: {info[0]} "); //display info from GetEventDetails
         Console.WriteLine($"When: {days[int.Parse(info[1])]} at {info[2]}:{info[3]} until {info[5]}:{info[6]}");
         Console.WriteLine($"\nOther People: "); //display _whoWith
         for(int j=0; j < _whoWith.Count; j++)
@@ -29,8 +27,6 @@ public class Spiritual: Event
 
     public override void TimePast() //wip
     {
-        Console.WriteLine("running TimePast from Spiritual ");
-        
         //ask user what insight they gained from the event
         Console.WriteLine("What did you gain from this event? ");
         _journal = Console.ReadLine(); //save that to _journal
@@ -39,7 +35,6 @@ public class Spiritual: Event
     }
     public override void SaveEvent(string fileName) //wip
     {
-        Console.WriteLine("running SaveEvent from Spiritual ");
         List<string> info = GetEventDetails(); //call GetEventDetails
         using (StreamWriter outputFile = new StreamWriter(fileName, true))//open fileName
         {

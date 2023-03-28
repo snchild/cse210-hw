@@ -12,10 +12,8 @@ public class Physical: Event
     //methods here
     public override void DisplayEventDetails(List<string> days) //wip
     {
-        Console.WriteLine("running DisplayEventDetails from Physical ");
-
         List<string> info = GetEventDetails(); //call GetEventDetails
-        Console.WriteLine($"\n{info[0]}: "); //display info from GetEventDetails
+        Console.WriteLine($"\nPhysical: {info[0]} "); //display info from GetEventDetails
         Console.WriteLine($"When: {days[int.Parse(info[1])]} at {info[2]}:{info[3]} until {info[5]}:{info[6]}");
         
         Console.WriteLine($"\nGoal for the workout: {_goal}"); //display _materials and _goal
@@ -29,7 +27,6 @@ public class Physical: Event
 
     public override void TimePast() //wip
     {
-        Console.WriteLine("running TimePast from Physical ");
         Console.WriteLine($"Goal: {_goal}");
 
         Console.Write("Would you like to make a new goal? (y/n) "); //ask if user wants to make a new goal
@@ -42,9 +39,7 @@ public class Physical: Event
         SetIsPast();
     }
     public override void SaveEvent(string fileName) //wip
-    {
-        Console.WriteLine("running SaveEvent from Physical ");
-        
+    {        
         List<string> info = GetEventDetails(); //call GetEventDetails
         using (StreamWriter outputFile = new StreamWriter(fileName, true))//open fileName
         {

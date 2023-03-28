@@ -4,8 +4,6 @@ class Program
 {
     static List<Event> CreateEvent(List<Event> myEvents) //wip
     {
-        Console.WriteLine("running CreateEvent from Program");
-
         Console.WriteLine("\nHere is the list of even types: "); //display the list of event types
         Console.WriteLine("\t1. Chores");
         Console.WriteLine("\t2. Class time");
@@ -22,13 +20,13 @@ class Program
         string name = Console.ReadLine();
         Console.Write("What day does your event start? (Sunday is 1, Saturday 7) ");
         string startDay = Console.ReadLine();
-        Console.Write("What is the hour your event starts? ");
+        Console.Write("What is the hour your event starts (in military time)? ");
         string startHour = Console.ReadLine();
         Console.Write("What is the minute your event starts? ");
         string startMin = Console.ReadLine();
         Console.Write("What day does your event end? (Sunday is 1, Saturday 7) ");
         string endDay = Console.ReadLine();
-        Console.Write("What is the hour your event ends? ");
+        Console.Write("What is the hour your event ends (in military time)? ");
         string endHour = Console.ReadLine();
         Console.Write("What is the minute your event ends? ");
         string endMin = Console.ReadLine();
@@ -172,8 +170,6 @@ class Program
     }
     static List<Event> CancelEvent(List<Event> myEvents) //wip
     {
-        Console.WriteLine("running CancelEvent from Program");
-        
         //prompt the user for the number of event to be deleted
         Console.Write("\nWhat is the number of the event you would like to cancel? ");
         int eventCancel = int.Parse(Console.ReadLine()) - 1; //this gets the index of the event
@@ -190,12 +186,10 @@ class Program
     }
     static void CheckTime(List<Event> myEvents) //wip
     {
-        Console.WriteLine("running CheckTime from Program");
-        
         //prompt user for day and time
-        Console.Write("What day is it? (1 is Sunday, 7 is Saturday)");
+        Console.Write("What day is it? (1 is Sunday, 7 is Saturday) ");
         int day = int.Parse(Console.ReadLine());
-        Console.Write("What hour is it? ");
+        Console.Write("What hour is it (in military time)? ");
         int hour = int.Parse(Console.ReadLine());
         Console.Write("What minute is it? ");
         int minute = int.Parse(Console.ReadLine());
@@ -229,10 +223,8 @@ class Program
         Console.WriteLine("\t7. Check The Time");
         Console.WriteLine("\t8. Quit\n");
     }
-    static void DisplaySchedule(List<Event> myEvents) //wip
+    static void DisplaySchedule(List<Event> myEvents)
     {
-        Console.WriteLine("running DisplaySchedule from Program");
-
         //initialize variables
         List<string> info = new List<string>();
         List<string> days = new List<string>(){"Sunday", "Monday", "Tuesday","Wednesday", "Thursday","Friday","Saturday"};
@@ -242,12 +234,11 @@ class Program
         for(int i = 0; i < myEvents.Count; i++)
         { //make sure each event is numbered
             info = myEvents[i].GetEventDetails();
-            Console.WriteLine($"\t{i+1}. {days[ int.Parse(info[1]) - 1 ]} from {info[2]}:{info[3]} to {info[5]}:{info[6]} - {info[0]}");
+            Console.WriteLine($"\t{i+1}. {days[ int.Parse(info[1]) - 1 ]}\tfrom {info[2]}:{info[3]} to {info[5]}:{info[6]} - {info[0]}");
         }
     }
     static void DisplayEventInfo(List<Event> myEvents) //wip
     {
-        Console.WriteLine("running DisplayEventInfo from Program");
         List<string> days = new List<string>(){"Sunday", "Monday", "Tuesday","Wednesday", "Thursday","Friday","Saturday"};
 
         Console.Write("Which event would you like to see the details for? "); //prompt user for event number
@@ -295,7 +286,7 @@ class Program
                     bool attendance = bool.Parse(parts[11]); //change attendace to correct form
                     
                     List<string> materialsList2 = new List<string>();//create materials list
-                    for(int j=9; j < parts.Length; j++ )
+                    for(int j=11; j < parts.Length; j++ )
                     {
                         materialsList2.Add(parts[j]);
                     }
@@ -328,13 +319,13 @@ class Program
                     break;
 
                 case "Social":
-                    List<string> materialsList5 = new List<string>();//create materials list
-                    for(int j=11; j < parts.Length; j++ )
+                    List<string> peopleList5 = new List<string>();//create materials list
+                    for(int j=12; j < parts.Length; j++ )
                     {
-                        materialsList5.Add(parts[j]);
+                        peopleList5.Add(parts[j]);
                     }
                     //order: List<string> info, double cost, string where, string description, List<string> people
-                    Social event5 = new Social(info, double.Parse(parts[9]), parts[10], parts[11], materialsList5);
+                    Social event5 = new Social(info, double.Parse(parts[9]), parts[10], parts[11], peopleList5);
                     myEvents.Add(event5); //add those events to the event list
                     break;
 
@@ -353,9 +344,7 @@ class Program
         return myEvents; //return updated event list 
     }
     static void SaveSchedule(List<Event> myEvents) //wip
-    {
-        Console.WriteLine("running SaveSchedule from Program");
-        
+    {       
         //prompt the user for the file name
         Console.Write("What is the name of your file? ");
         string fileName = Console.ReadLine();

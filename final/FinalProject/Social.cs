@@ -17,9 +17,8 @@ public class Social: Event
     //methods here
     public override void DisplayEventDetails(List<string> days) //wip
     {
-        Console.WriteLine("running DisplayEventDetails from Social ");
         List<string> info = GetEventDetails(); //call GetEventDetails
-        Console.WriteLine($"\n{info[0]}: "); //display info from GetEventDetails
+        Console.WriteLine($"\nSocial: {info[0]} "); //display info from GetEventDetails
         Console.WriteLine($"When: {days[int.Parse(info[1])]} at {info[2]}:{info[3]} until {info[5]}:{info[6]}");
 
         //display _cost, _location, and _description
@@ -30,7 +29,7 @@ public class Social: Event
             Console.WriteLine($"{_whoWith[j]}");
         }
 
-        if(bool.Parse(info[-1])) //checks to see if _isPast is true
+        if(bool.Parse(info.Last())) //checks to see if _isPast is true
         {
             Console.WriteLine($"The event was {_stars} / 5 stars.");
         }
@@ -38,7 +37,6 @@ public class Social: Event
 
     public override void TimePast() //wip
     {
-        Console.WriteLine("running TimePast from Social ");
         //asks the user to rate their experience out of 5 stars
         Console.Write("Please rate your experience out of 5 stars: ");
         _stars = int.Parse(Console.ReadLine());
@@ -46,7 +44,6 @@ public class Social: Event
     }
     public override void SaveEvent(string fileName) //wip
     {
-        Console.WriteLine("running SaveEvent from Social ");
         List<string> info = GetEventDetails(); //call GetEventDetails
         using (StreamWriter outputFile = new StreamWriter(fileName, true))//open fileName
         {
