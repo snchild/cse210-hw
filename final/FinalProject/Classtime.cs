@@ -29,12 +29,12 @@ public class Classtime: School
         }
     }
 
-    public override void TimePast() //wip
+    public override void TimePast()
     {
-        Console.WriteLine("Class is over now."); //displays a message saying class is over
+        Console.WriteLine($"{GetName()} is over now."); //displays a message saying class is over
         SetIsPast();
     }
-    public override void SaveEvent(string fileName) //wip
+    public override void SaveEvent(string fileName)
     {
         List<string> info = GetEventDetails(); //call GetEventDetails
         List<string> locAndMat = GetLocationAndMaterials(); //call GetLocationAndMaterials

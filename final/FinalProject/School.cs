@@ -4,14 +4,14 @@ public abstract class School: Event
     private string _location;
     private List<string> _materialsNeeded = new List<string>();
 
-    public School(List<string> info, string where, List<string> materials) : base(info)//wip
+    public School(List<string> info, string where, List<string> materials) : base(info)
     {
         _location = where;
         _materialsNeeded = materials;
     }
 
     //methods here
-    public List<string> GetLocationAndMaterials() //wip
+    public List<string> GetLocationAndMaterials()
     {
         List<string> locationAndMaterials = new List<string>();
         

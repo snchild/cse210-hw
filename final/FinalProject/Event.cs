@@ -48,5 +48,8 @@ public abstract class Event
         return _isPast;
     }
 
-     
+    public string GetName() //wip
+    {
+        return _name;
+    } 
 }

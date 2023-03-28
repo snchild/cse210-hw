@@ -25,9 +25,9 @@ public class Physical: Event
         
     }
 
-    public override void TimePast() //wip
+    public override void TimePast()
     {
-        Console.WriteLine($"Goal: {_goal}");
+        Console.WriteLine($"Goal for {GetName()}: {_goal}");
 
         Console.Write("Would you like to make a new goal? (y/n) "); //ask if user wants to make a new goal
         string newGoal = Console.ReadLine();
@@ -38,7 +38,7 @@ public class Physical: Event
         }
         SetIsPast();
     }
-    public override void SaveEvent(string fileName) //wip
+    public override void SaveEvent(string fileName)
     {        
         List<string> info = GetEventDetails(); //call GetEventDetails
         using (StreamWriter outputFile = new StreamWriter(fileName, true))//open fileName

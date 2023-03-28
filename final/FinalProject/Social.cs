@@ -35,14 +35,14 @@ public class Social: Event
         }
     }
 
-    public override void TimePast() //wip
+    public override void TimePast()
     {
         //asks the user to rate their experience out of 5 stars
-        Console.Write("Please rate your experience out of 5 stars: ");
+        Console.Write($"Please rate your experience for {GetName()} out of 5 stars: ");
         _stars = int.Parse(Console.ReadLine());
         SetIsPast();
     }
-    public override void SaveEvent(string fileName) //wip
+    public override void SaveEvent(string fileName) 
     {
         List<string> info = GetEventDetails(); //call GetEventDetails
         using (StreamWriter outputFile = new StreamWriter(fileName, true))//open fileName

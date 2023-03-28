@@ -30,17 +30,17 @@ public class Homework: School
     public override void TimePast() //wip
     {
         //asks the user if they finished their homework
-        Console.Write("Did you finish your homework? (y/n) ");
+        Console.Write($"Did you finish your {GetName()}? (y/n) ");
         string finished = Console.ReadLine();
         
         if(finished == "n"){ //if no, it tells them to schedule another homework event
-            Console.WriteLine("You should schedule another time to do homework.");  
+            Console.WriteLine($"You should schedule another time to do {GetName()}.");  
         }
         
         //can i make them schedule another event?
         SetIsPast();
     }
-    public override void SaveEvent(string fileName) //wip
+    public override void SaveEvent(string fileName)
     {
         List<string> info = GetEventDetails(); //call GetEventDetails
         List<string> locAndMat = GetLocationAndMaterials(); //call GetLocationAndMaterials

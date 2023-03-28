@@ -2,7 +2,7 @@ using System;
 
 class Program
 {
-    static List<Event> CreateEvent(List<Event> myEvents) //wip
+    static List<Event> CreateEvent(List<Event> myEvents) //stretch goal availible
     {
         Console.WriteLine("\nHere is the list of even types: "); //display the list of event types
         Console.WriteLine("\t1. Chores");
@@ -18,13 +18,13 @@ class Program
 
         Console.Write("\nWhat is the name of your event? "); //ask for name, start time, and end time
         string name = Console.ReadLine();
-        Console.Write("What day does your event start? (Sunday is 1, Saturday 7) ");
+        Console.Write("\nWhat day does your event start? (Sunday is 1, Saturday 7) ");
         string startDay = Console.ReadLine();
         Console.Write("What is the hour your event starts (in military time)? ");
         string startHour = Console.ReadLine();
         Console.Write("What is the minute your event starts? ");
         string startMin = Console.ReadLine();
-        Console.Write("What day does your event end? (Sunday is 1, Saturday 7) ");
+        Console.Write("\nWhat day does your event ends? (Sunday is 1, Saturday 7) ");
         string endDay = Console.ReadLine();
         Console.Write("What is the hour your event ends (in military time)? ");
         string endHour = Console.ReadLine();
@@ -41,7 +41,7 @@ class Program
         {
             case 1: //chores
                 //prompt the user for the needed details
-                Console.Write("How many materials do you need for your chores? ");
+                Console.Write("\nHow many materials do you need for your chores? ");
                 int numMat1 = int.Parse(Console.ReadLine());
 
                 Console.WriteLine("What materials do you need?");
@@ -57,7 +57,7 @@ class Program
 
             case 2: //class time
                 //prompt the user for the needed details
-                Console.Write("Where is your class? ");
+                Console.Write("\nWhere is your class? ");
                 string where2 = Console.ReadLine();
 
                 Console.Write("Who is your teacher? ");
@@ -82,7 +82,7 @@ class Program
 
             case 3: //homework
                 //prompt the user for the needed details
-                Console.Write("Where are you doing your homework? ");
+                Console.Write("\nWhere are you doing your homework? ");
                 string where3 = Console.ReadLine();
 
                 Console.Write("When is this homework due? ");
@@ -107,7 +107,7 @@ class Program
 
             case 4: //physical
                 //prompt the user for the needed details
-                Console.Write("What is your goal for this event? ");
+                Console.Write("\nWhat is your goal for this event? ");
                 string goal = Console.ReadLine();
 
                 Console.Write("How many materials do you need for your workout? "); //get materials
@@ -126,7 +126,7 @@ class Program
 
             case 5: //social
                 //prompt the user for the needed details
-                Console.Write("What is a description of this event? ");
+                Console.Write("\nWhat is a description of this event? ");
                 string description5 = Console.ReadLine();
                 
                 Console.Write("What do you anticipate spending for this event? $");
@@ -151,7 +151,7 @@ class Program
 
             case 6: //spiritual
                 //prompt the user for the needed details
-                Console.Write("How many people are also going? "); //get people
+                Console.Write("\nHow many people are also going? "); //get people
                 int numPep6 = int.Parse(Console.ReadLine());
                 Console.WriteLine("Who are those people?");
                 List<string> people6 = new List<string>();
@@ -168,7 +168,7 @@ class Program
         
         return myEvents; //return the updated event list
     }
-    static List<Event> CancelEvent(List<Event> myEvents) //wip
+    static List<Event> CancelEvent(List<Event> myEvents)
     {
         //prompt the user for the number of event to be deleted
         Console.Write("\nWhat is the number of the event you would like to cancel? ");
@@ -184,7 +184,7 @@ class Program
         
         return myEvents; //return updated event list
     }
-    static void CheckTime(List<Event> myEvents) //wip
+    static void CheckTime(List<Event> myEvents)
     {
         //prompt user for day and time
         Console.Write("What day is it? (1 is Sunday, 7 is Saturday) ");
