@@ -23,7 +23,6 @@ public abstract class Event
     }
     public List<string> GetEventDetails() //wip
     {
-        Console.WriteLine("running GetEventDetails from Event");
         List<string> info = new List<string>(){_name};
         List<int> startInfo = _startTime.GetDateAndTime();
         List<int> endInfo = _endTime.GetDateAndTime();

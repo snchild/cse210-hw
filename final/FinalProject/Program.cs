@@ -232,8 +232,18 @@ class Program
     static void DisplaySchedule(List<Event> myEvents) //wip
     {
         Console.WriteLine("running DisplaySchedule from Program");
-        //display the schedule
-        //make sure each event is numbered
+
+        //initialize variables
+        List<string> info = new List<string>();
+        List<string> days = new List<string>(){"Sunday", "Monday", "Tuesday","Wednesday", "Thursday","Friday","Saturday"};
+        
+        Console.WriteLine("\nYour schedule for the week: "); //display the schedule
+        
+        for(int i = 0; i < myEvents.Count; i++)
+        { //make sure each event is numbered
+            info = myEvents[i].GetEventDetails();
+            Console.WriteLine($"\t{i+1}. {days[ int.Parse(info[1]) - 1 ]} from {info[2]}:{info[3]} to {info[5]}:{info[6]} - {info[0]}");
+        }
     }
     static void DisplayEventInfo(List<Event> myEvents) //wip
     {
@@ -251,7 +261,6 @@ class Program
     }
     static List<Event> LoadSchedule(List<Event> myEvents) //wip
     {
-        Console.WriteLine("running LoadSchedule from Program");
         //prompt the user for the file name
         Console.Write("What is the name of your file? ");
         string fileName = Console.ReadLine();
@@ -373,8 +382,6 @@ class Program
 
         do{
             DisplayOptions(); //display the options
-
-            //Console.WriteLine("BTW, only CreateEvent, LoadEvent, and SaveEvent have things happening");
 
             Console.Write("Which option would you like? "); //prompt the user for their option
             inputString = Console.ReadLine(); 

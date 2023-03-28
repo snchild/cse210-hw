@@ -15,7 +15,6 @@ public class DateTime
     //methods
     public List<int> GetDateAndTime()
     {
-        Console.WriteLine("running GetDateAndTime from DateTime");
         List<int> info = new List<int>(){_date,_hour,_minute};
         return info;
     }
