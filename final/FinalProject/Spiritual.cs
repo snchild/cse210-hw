@@ -47,7 +47,7 @@ public class Spiritual: Event
                 outputFile.Write($"; {_whoWith[j]}");
             }
 
-            if(bool.Parse(info[-1])) //write _journal if it exists
+            if(bool.Parse(info.Last())) //write _journal if it exists
             {
                 outputFile.Write($"; {_journal}");
             }

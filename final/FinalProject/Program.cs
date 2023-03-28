@@ -16,7 +16,7 @@ class Program
         Console.Write("What type of event would you like to make? ");
         int option = int.Parse(Console.ReadLine());
 
-        Console.Write("What is the name of your event? "); //ask for name, start time, and end time
+        Console.Write("\nWhat is the name of your event? "); //ask for name, start time, and end time
         string name = Console.ReadLine();
         Console.Write("What day does your event start? (Sunday is 1, Saturday 7) ");
         string startDay = Console.ReadLine();
