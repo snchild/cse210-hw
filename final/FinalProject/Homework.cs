@@ -11,21 +11,35 @@ public class Homework: School
     }
 
     //methods here
-    public override void DisplayEventDetails() //wip
+    public override void DisplayEventDetails(List<string> days) //wip
     {
         Console.WriteLine("running DisplayEventDetails from Homework ");
-        //call GetEventDetails
-        //display info from GetEventDetails
-        //call GetLocationAndMaterials
-        //display info from GetLocationAndMaterials
-        //display _whenDue and _points
+        List<string> info = GetEventDetails(); //call GetEventDetails
+        List<string> locAndMat = GetLocationAndMaterials();//call GetLocationAndMaterials
+
+        Console.WriteLine($"\n{info[0]}: "); //display info from GetEventDetails
+        Console.WriteLine($"When: {days[int.Parse(info[1])]} at {info[2]}:{info[3]} until {info[5]}:{info[6]}");
+        Console.WriteLine($"Due Date: {_whenDue}\nPoints: {_points}"); //display _whenDue and _points
+        Console.WriteLine($"Location: {locAndMat[0]}"); //display info from GetLocationAndMaterials
+        
+        Console.WriteLine($"\nMaterials: "); //display materials
+        for(int j=1; j < locAndMat.Count; j++)
+        {
+            Console.WriteLine($"{locAndMat[j]}");
+        }
     }
     public override void TimePast() //wip
     {
         Console.WriteLine("running TimePast from Homework ");
         //asks the user if they finished their homework
-        //if no, it tells them to schedule another homework event
-        //can i make them?
+        Console.Write("Did you finish your homework? (y/n) ");
+        string finished = Console.ReadLine();
+        
+        if(finished == "n"){ //if no, it tells them to schedule another homework event
+            Console.WriteLine("You should schedule another time to do homework.");  
+        }
+        
+        //can i make them schedule another event?
         SetIsPast();
     }
     public override void SaveEvent(string fileName) //wip

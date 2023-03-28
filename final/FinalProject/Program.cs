@@ -248,12 +248,14 @@ class Program
     static void DisplayEventInfo(List<Event> myEvents) //wip
     {
         Console.WriteLine("running DisplayEventInfo from Program");
+        List<string> days = new List<string>(){"Sunday", "Monday", "Tuesday","Wednesday", "Thursday","Friday","Saturday"};
+
         Console.Write("Which event would you like to see the details for? "); //prompt user for event number
         int detailedEvent = int.Parse(Console.ReadLine()) - 1; //this gets the index of the event
         
         if(detailedEvent < myEvents.Count) //check if the input is valid
         {
-            myEvents[detailedEvent].DisplayEventDetails(); //run DisplayEventDetails() for that event
+            myEvents[detailedEvent].DisplayEventDetails(days); //run DisplayEventDetails() for that event
         }
         else{
             Console.WriteLine("That event didn't exist.");
@@ -367,9 +369,13 @@ class Program
     static List<Event> SortEvents(List<Event> myEvents) //wip
     {
         Console.WriteLine("running SortEvents from Program");
+
         //loop through event list
+        
             //call GetStartTime() for each event
+
             //sort the events based on their start times
+       
         return myEvents; //return updated event list
     }
     static void Main(string[] args) //wip

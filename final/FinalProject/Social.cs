@@ -5,6 +5,7 @@ public class Social: Event
     private double _cost;
     private string _location;
     private string _description;
+    private int _stars;
 
     public Social(List<string> info, double cost, string where, string description, List<string> people): base(info)//constructor here
     {
@@ -14,19 +15,33 @@ public class Social: Event
         _description = description;
     }
     //methods here
-    public override void DisplayEventDetails() //wip
+    public override void DisplayEventDetails(List<string> days) //wip
     {
         Console.WriteLine("running DisplayEventDetails from Social ");
-        //call GetEventDetails
-        //display info from GetEventDetails
-        //display _whoWith, _cost, _location, and _description
+        List<string> info = GetEventDetails(); //call GetEventDetails
+        Console.WriteLine($"\n{info[0]}: "); //display info from GetEventDetails
+        Console.WriteLine($"When: {days[int.Parse(info[1])]} at {info[2]}:{info[3]} until {info[5]}:{info[6]}");
+
+        //display _cost, _location, and _description
+        Console.WriteLine($"Expected Cost: {_cost}\nLocation: {_location}\nDescription: {_description}");
+        Console.WriteLine($"\nOther People: "); //display _whoWith
+        for(int j=0; j < _whoWith.Count; j++)
+        {
+            Console.WriteLine($"{_whoWith[j]}");
+        }
+
+        if(bool.Parse(info[-1])) //checks to see if _isPast is true
+        {
+            Console.WriteLine($"The event was {_stars} / 5 stars.");
+        }
     }
 
     public override void TimePast() //wip
     {
         Console.WriteLine("running TimePast from Social ");
-        //ask the user how the event went
         //asks the user to rate their experience out of 5 stars
+        Console.Write("Please rate your experience out of 5 stars: ");
+        _stars = int.Parse(Console.ReadLine());
         SetIsPast();
     }
     public override void SaveEvent(string fileName) //wip

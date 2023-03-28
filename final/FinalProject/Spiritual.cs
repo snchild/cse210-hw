@@ -8,21 +8,33 @@ public class Spiritual: Event
         _whoWith = people;
     }
     //methods here
-    public override void DisplayEventDetails() //wip
+    public override void DisplayEventDetails(List<string> days) //wip
     {
         Console.WriteLine("running DisplayEventDetails from Spiritual ");
-        //call GetEventDetails
-        //display info from GetEventDetails
-        //display _whoWith
-        //stretch goal: checks to see if _isPast is true
-            //if so, call DisplayEntries()
+
+        List<string> info = GetEventDetails(); //call GetEventDetails
+        Console.WriteLine($"\n{info[0]}: "); //display info from GetEventDetails
+        Console.WriteLine($"When: {days[int.Parse(info[1])]} at {info[2]}:{info[3]} until {info[5]}:{info[6]}");
+        Console.WriteLine($"\nOther People: "); //display _whoWith
+        for(int j=0; j < _whoWith.Count; j++)
+        {
+            Console.WriteLine($"{_whoWith[j]}");
+        }
+
+        if(bool.Parse(info[-1])) //checks to see if _isPast is true
+        {
+            Console.WriteLine($"Reflection from the event: {_journal}");
+        }
     }
 
     public override void TimePast() //wip
     {
         Console.WriteLine("running TimePast from Spiritual ");
+        
         //ask user what insight they gained from the event
-        //save that to _journal
+        Console.WriteLine("What did you gain from this event? ");
+        _journal = Console.ReadLine(); //save that to _journal
+        
         SetIsPast();
     }
     public override void SaveEvent(string fileName) //wip
@@ -48,10 +60,5 @@ public class Spiritual: Event
             
         }
         
-    }
-    public void DisplayEntries() //wip
-    {
-        Console.WriteLine("running DisplayEntries from Spiritual");
-        //displays the journal entry
     }
 }

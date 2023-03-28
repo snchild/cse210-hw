@@ -14,7 +14,7 @@ public abstract class Event
         _isPast = false;
     }
     //methods here
-    public abstract void DisplayEventDetails();
+    public abstract void DisplayEventDetails(List<string> days);
     public abstract void TimePast();
     public abstract void SaveEvent(string fileName);
     public void SetIsPast()
@@ -48,5 +48,6 @@ public abstract class Event
     {
         return _isPast;
     }
+
      
 }
