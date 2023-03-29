@@ -2,7 +2,7 @@ using System;
 
 class Program
 {
-    static List<Event> CreateEvent(List<Event> myEvents) //stretch goal availible
+    static List<Event> CreateEvent(List<Event> myEvents)
     {
         Console.WriteLine("\nHere is the list of even types: "); //display the list of event types
         Console.WriteLine("\t1. Chores");
@@ -355,7 +355,7 @@ class Program
         }
             
     }
-    static List<Event> SortEvents(List<Event> myEvents) //wip
+    static List<Event> SortEvents(List<Event> myEvents)
     {
         Console.WriteLine("running SortEvents from Program");
 
