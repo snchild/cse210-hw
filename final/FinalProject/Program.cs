@@ -359,13 +359,13 @@ class Program
     {
         Console.WriteLine("running SortEvents from Program");
 
-        //loop through event list
-        
-            //call GetStartTime() for each event
+        List<Event> sortedEvents = new List<Event>(); //create empty list that will be the sorted list
 
-            //sort the events based on their start times
+        //try commands to sort the list
+        sortedEvents = myEvents.OrderBy(x => x.GetStartDay()).ToList();
+        //problem: doesn't sort the events on the same day
        
-        return myEvents; //return updated event list
+        return sortedEvents; //return sorted list
     }
     static void Main(string[] args)
     {
@@ -386,10 +386,12 @@ class Program
             switch(option)
             {
                 case 1: //display schedule
+                    myEvents = SortEvents(myEvents);
                     DisplaySchedule(myEvents);
                     break;
                 case 2: //create event
                     myEvents = CreateEvent(myEvents);
+                    myEvents = SortEvents(myEvents);
                     break;
                 case 3: //cancel event
                     myEvents = CancelEvent(myEvents);
@@ -402,6 +404,7 @@ class Program
                     break;
                 case 6: //load schedule
                     myEvents = LoadSchedule(myEvents);
+                    myEvents = SortEvents(myEvents);
                     break;
                 case 7: //check time
                     CheckTime(myEvents);

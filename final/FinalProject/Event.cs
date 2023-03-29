@@ -52,4 +52,9 @@ public abstract class Event
     {
         return _name;
     } 
+    public int GetStartDay()
+    {
+        List<int> dateAndTime = _startTime.GetDateAndTime();
+        return dateAndTime[0];
+    }
 }
