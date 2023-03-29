@@ -57,4 +57,14 @@ public abstract class Event
         List<int> dateAndTime = _startTime.GetDateAndTime();
         return dateAndTime[0];
     }
+    public int GetStartHour()
+    {
+        List<int> dateAndTime = _startTime.GetDateAndTime();
+        return dateAndTime[1];
+    }
+    public int GetStartMin()
+    {
+        List<int> dateAndTime = _startTime.GetDateAndTime();
+        return dateAndTime[2];
+    }
 }

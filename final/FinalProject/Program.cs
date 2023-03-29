@@ -362,8 +362,9 @@ class Program
         List<Event> sortedEvents = new List<Event>(); //create empty list that will be the sorted list
 
         //try commands to sort the list
-        sortedEvents = myEvents.OrderBy(x => x.GetStartDay()).ToList();
+        sortedEvents = myEvents.OrderBy(x => x.GetStartDay()).ThenBy(x => x.GetStartHour()).ThenBy(x => x.GetStartMin()).ToList();
         //problem: doesn't sort the events on the same day
+        //solution: use ThenBy()
        
         return sortedEvents; //return sorted list
     }

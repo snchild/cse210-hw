@@ -5,4 +5,5 @@ Physical; go on a walk; 5; 11; 15; 5; 12; 15; False; walk to the gradens and bac
 Social; go to the movies; 6; 16; 30; 6; 22; 30; False; 10.15; rexburg; go to watch the dnd movie with friends; braden; cooper; isaac; dani
 Spiritual; relief society activity; 5; 19; 10; 5; 20; 15; False; katie; chelsey; maggie
 Spiritual; relief society activity; 5; 18; 10; 5; 19; 15; False; chelsey; maggie
+Homework; religion homework; 4; 18; 30; 4; 20; 13; False; romney; saturday; 20; laptop
 Homework; religion homework; 4; 18; 25; 4; 20; 13; False; romney; saturday; 20; laptop
