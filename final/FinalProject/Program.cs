@@ -194,6 +194,9 @@ class Program
         Console.Write("What minute is it? ");
         int minute = int.Parse(Console.ReadLine());
         
+        bool timeHere = false; //will help me know when the next upcoming event is
+        List<string> days = new List<string>(){"Sunday", "Monday", "Tuesday","Wednesday", "Thursday","Friday","Saturday"};
+
         //loop through event list
         for(int j=0; j < myEvents.Count; j++)
         {
@@ -206,6 +209,13 @@ class Program
             {
                 //if _isPast is false, call TimePast() for the event
                 myEvents[j].TimePast();
+                timeHere = true;
+            }
+            else if(timeHere)
+            {
+                List<int> timing = myEvents[j].GetStartTime();
+                Console.WriteLine($"\nThe next upcoming event will be {myEvents[j].GetName()} at {timing[1]}:{timing[2]} on {days[timing[0] - 1]}");
+                timeHere = false;
             }
         }
             
@@ -357,8 +367,6 @@ class Program
     }
     static List<Event> SortEvents(List<Event> myEvents)
     {
-        Console.WriteLine("running SortEvents from Program");
-
         List<Event> sortedEvents = new List<Event>(); //create empty list that will be the sorted list
 
         //try commands to sort the list
@@ -387,7 +395,6 @@ class Program
             switch(option)
             {
                 case 1: //display schedule
-                    myEvents = SortEvents(myEvents);
                     DisplaySchedule(myEvents);
                     break;
                 case 2: //create event
@@ -396,6 +403,7 @@ class Program
                     break;
                 case 3: //cancel event
                     myEvents = CancelEvent(myEvents);
+                    //shouldn't affect the orer of the other events so no need for SortEvents
                     break;
                 case 4: //display event info
                     DisplayEventInfo(myEvents);
