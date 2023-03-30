@@ -1,7 +1,7 @@
 public class Homework: School
 {
     //attributes here
-    private string _whenDue; //might be a different format  <- should it be a DateTime?
+    private string _whenDue; 
     private int _points;
 
     public Homework(List<string> info, string where, string dueDate, int points, List<string> materials): base(info, where, materials)//constructor here
@@ -37,7 +37,6 @@ public class Homework: School
             Console.WriteLine($"You should schedule another time to do {GetName()}.");  
         }
         
-        //can i make them schedule another event?
         SetIsPast();
     }
     public override void SaveEvent(string fileName)

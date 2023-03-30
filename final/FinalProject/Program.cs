@@ -34,8 +34,6 @@ class Program
         //combine all into info
         List<string> info = new List<string>(){name, startDay, startHour, startMin, endDay, endHour, endMin, $"{false}"};
 
-        //stretch goal: check whether time overlaps with another event
-
         //create corresponding event (use switch case)
         switch(option)
         {
@@ -211,15 +209,13 @@ class Program
                 myEvents[j].TimePast();
                 timeHere = true;
             }
-            else if(timeHere)
+            else if(timeHere) //stretch goal: display the name of the event that's next up
             {
                 List<int> timing = myEvents[j].GetStartTime();
                 Console.WriteLine($"\nThe next upcoming event will be {myEvents[j].GetName()} at {timing[1]}:{timing[2]} on {days[timing[0] - 1]}");
                 timeHere = false;
             }
-        }
-            
-        //stretch goal: display the name of the event that's next up 
+        } 
     }
     static void DisplayOptions()
     {
